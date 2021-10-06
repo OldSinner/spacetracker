@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Launch from "./Launch";
 import axios from "axios";
+import loading from "../../assets/loading.svg"
 import "./LaunchBigScreen.css";
 
 export default function LaunchBigScreen() {
@@ -12,26 +13,27 @@ export default function LaunchBigScreen() {
     axios
       .get("https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?limit=3")
       .then((res) => {
-        setLaunch(res)
-        setIsLoaded(true);
+          setLaunch(res)
+          setIsLoaded(true);
       })
       .catch((error) => {
-          setIsLoaded(true);
           setError(error)
+          setIsLoaded(true);
       });
   }, []);
   if (error) {
     return (
       <div className="bigScreen">
         <div className="title">Upcoming Launch</div>
-        <div className="slidder title">Problem Occured! Sorry!</div>
+        <div className="slidder subtitle">Problem Occured! Sorry!</div>
       </div>
     );
   } else if (!isLoaded) {
     return (
       <div className="bigScreen">
         <div className="title">Upcoming Launch</div>
-        <div className="slidder title">We get the Secret Data! Wait!</div>
+        <img className='loadingLogo' src={loading} alt="Loading" />
+        <div className="slidder subtitle">We connect with the cosmos! Please wait!</div>
       </div>
     );
   } else {
@@ -45,7 +47,6 @@ export default function LaunchBigScreen() {
           <Launch launchInfo={launch.data.results[0]} />
           <Launch launchInfo={launch.data.results[1]} />
           <Launch launchInfo={launch.data.results[2]} />
-
           <div className="moveButton">
             <i class="fas fa-chevron-right"></i>
           </div>

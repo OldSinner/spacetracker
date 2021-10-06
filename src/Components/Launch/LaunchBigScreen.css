@@ -5,6 +5,9 @@
     width: 100%;
     padding: auto;
     background-color: var(--secondColor);
+    justify-content: center;
+    align-items: center;
+    
 }
 .moveButton{
     color: var(--firstColor);
@@ -21,5 +24,11 @@
     margin-top: 10px;
     text-align: center;
     color: var(--firstColor);
-    font-size: 40px;
+    font-size: 60px;
+}
+.subtitle{
+    text-align: center;
+    color: var(--firstColor);
+    font-size: 20px;
+    margin-bottom: 5px;
 }
