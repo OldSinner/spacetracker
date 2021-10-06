@@ -1,10 +1,15 @@
 import './App.css';
-
+import Layout from "./Components/Layouts/Layout"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   return (
-    <div>
-      
-    </div>
+    <Router>
+    <Layout>
+      <Switch>
+
+      </Switch>
+    </Layout>
+  </Router>
   );
 }
 
