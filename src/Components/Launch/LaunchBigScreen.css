@@ -1,0 +1,25 @@
+.bigScreen{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+    padding: auto;
+    background-color: var(--secondColor);
+}
+.moveButton{
+    color: var(--firstColor);
+    margin: 10px;
+    font-size: 50px;
+}
+.slidder{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.title{
+    margin-top: 10px;
+    text-align: center;
+    color: var(--firstColor);
+    font-size: 40px;
+}

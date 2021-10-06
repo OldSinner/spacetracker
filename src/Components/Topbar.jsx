@@ -5,7 +5,11 @@ import { Link } from "react-router-dom";
 export default function Topbar() {
   return (
     <div className="topnav">
-      <div className="logo">Space Tracker</div>
+      <Link to="/">
+        <div className="logo">
+          Space<span className="logo2">Tracker</span>
+        </div>
+      </Link>
       <Link to="/">
         <div className="link">Events</div>
       </Link>

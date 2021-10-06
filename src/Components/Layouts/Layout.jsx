@@ -1,14 +1,12 @@
 import React from "react";
-import Topbar from "./Topbar";
+import Topbar from "../Topbar";
 import './Layout.css'
 const Layout = ({ children }) => {
   return (
     <React.Fragment>
-      <div>
-        <Topbar />
-      </div>
-      <div className="wrap">
-        <main>{children}</main>
+      <Topbar />
+      <div className="mainWrapper">
+        {children}
       </div>
     </React.Fragment>
   );
