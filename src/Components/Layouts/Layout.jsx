@@ -1,11 +1,15 @@
 import React from "react";
-import './Layout.css'
+import "./Layout.css";
+import { Breakpoint } from "react-socks";
+import TopBarMobile from "../TopBar/TopBarMobile";
+
 const Layout = ({ children }) => {
   return (
     <React.Fragment>
-      <div className="mainWrapper">
-        {children}
-      </div>
+      <Breakpoint medium down>
+        <TopBarMobile></TopBarMobile>
+      </Breakpoint>
+      <div className="mainWrapper">{children}</div>
     </React.Fragment>
   );
 };

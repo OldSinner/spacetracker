@@ -1,0 +1,79 @@
+.topwrapper{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+}
+.topbarm{
+    z-index: 10;
+    padding: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 40px;
+    background-color: var(--secondColor);
+
+}
+.menuIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.burgericon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    padding-left: -8px;
+    transition: 1s;
+    width: 40px;
+    height: 40px;
+}
+.logoMain{
+    padding-left: 20px;
+    font-size: 30px;
+}
+.secondLogo{
+    color: var(--detailColor);
+}
+#menuExpand{
+    display:none
+}
+.subMenu{
+    position: relative;
+    z-index: -10;
+    transition: 5s;
+    background-color: var(--thirdColor);
+    animation: slideDown 0.3s 1;
+    animation-fill-mode: forwards;
+}
+ul{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+li{
+    margin: 10px;
+    list-style: none;
+    width: 50%;
+
+    font-size: 40px;
+    padding: 5px;
+}
+hr{
+    margin: 0;
+    width: 80%;
+}
+@keyframes slideDown{
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(-1%);
+      opacity: 0.95;
+    }
+  }
