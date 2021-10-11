@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./TopBar.css";
 
-const TopBarMobile = () => {
+const NavbarM = () => {
   const [menuState, setMenuState] = useState(false);
   const changeState = () => {
     console.log("ok");
@@ -42,4 +42,4 @@ const TopBarMobile = () => {
   );
 };
 
-export default TopBarMobile;
+export default NavbarM;

@@ -1,5 +1,5 @@
 
-const TopBarDesktop = () => {
+const NavbarD = () => {
     return (
         <div>
             
@@ -7,4 +7,4 @@ const TopBarDesktop = () => {
     )
 }
 
-export default TopBarDesktop
+export default NavbarD
