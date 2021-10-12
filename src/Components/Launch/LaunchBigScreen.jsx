@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Launch from "./Launch";
 import axios from "axios";
-import loading from "../../assets/loading.svg"
+import loading from "../../assets/loading.svg";
 import "./LaunchBigScreen.css";
+import { Breakpoint } from "react-socks";
 
 export default function LaunchBigScreen() {
   const [error, setError] = useState(null);
@@ -13,12 +14,12 @@ export default function LaunchBigScreen() {
     axios
       .get("https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?limit=3")
       .then((res) => {
-          setLaunch(res)
-          setIsLoaded(true);
+        setLaunch(res);
+        setIsLoaded(true);
       })
       .catch((error) => {
-          setError(error)
-          setIsLoaded(true);
+        setError(error);
+        setIsLoaded(true);
       });
   }, []);
   if (error) {
@@ -32,26 +33,31 @@ export default function LaunchBigScreen() {
     return (
       <div className="bigScreen">
         <div className="title">Upcoming Launch</div>
-        <img className='loadingLogo' src={loading} alt="Loading" />
-        <div className="slidder subtitle">We connect with the cosmos! Please wait!</div>
-      </div>
-    );
-  } else {
-    return (
-      <div className="bigScreen">
-        <div className="title">Upcoming Launch</div>
-        <div className="slidder">
-          <div className="moveButton">
-            <i class="fas fa-chevron-left"></i>
-          </div>
-          <Launch launchInfo={launch.data.results[0]} />
-          <Launch launchInfo={launch.data.results[1]} />
-          <Launch launchInfo={launch.data.results[2]} />
-          <div className="moveButton">
-            <i class="fas fa-chevron-right"></i>
-          </div>
+        <img className="loadingLogo" src={loading} alt="Loading" />
+        <div className="slidder subtitle">
+          We connect with the cosmos! Please wait!
         </div>
       </div>
     );
-  } 
+  } else {
+    console.log(launch.data.results[0]);
+    return (
+      <div className="bigScreen">
+        <div className="title">Upcoming Launch</div>
+
+        <Breakpoint medium down>
+          <div className="slidder">
+            <Launch launchInfo={launch.data.results[0]} />
+          </div>
+        </Breakpoint>
+        <Breakpoint large up>
+          <div className="slidder">
+            <Launch launchInfo={launch.data.results[0]} />
+            <Launch launchInfo={launch.data.results[1]} />
+            <Launch launchInfo={launch.data.results[2]} />
+          </div>
+        </Breakpoint>
+      </div>
+    );
+  }
 }

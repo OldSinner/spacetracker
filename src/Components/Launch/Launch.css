@@ -1,7 +1,8 @@
 .wrap {
+  flex-basis: 100%;
   background-color: brown;
-  width: 30%;
-  height: 400px;
+  width: auto;
+  height: 500px;
   border-radius: 20px;
   margin: 20px;
   -webkit-box-shadow: 5px 5px 16px 5px rgba(0,0,0,0.25); 
@@ -15,26 +16,68 @@ box-shadow: 5px 5px 16px 5px rgba(0,0,0,0.25);
   object-fit: cover;
 }
 .launchTitle {
-  position: relative;
   font-family: "Gemunu Libre", sans-serif;
   text-align: center;
-  font-size: 40px;
-  top: -95%;
-  background-color: rgba(0,0,0,0.5);
+  font-size: 30px;
   width: 95%;
   margin: auto;
-  border-radius: 20px;
 }
 .launchTimer{
-  position: relative;
   font-family: "Gemunu Libre", sans-serif;
   text-align: center;
-  font-size: 40px;
-  top: -95%;
+  font-size: 27px;
   width: 80%;
   margin: auto;
-  margin-top: 20px;
-  border-radius: 20px;
-  background-color: rgba(0,0,0,0.5);
   vertical-align: top;
+}
+.hr80{
+  margin: auto;
+  width: 80%;
+}
+.hr60{
+  margin: auto;
+  width: 60%;
+}
+.detail{
+  position: relative;
+  width: 100%;
+  height: 50%;
+  background-color: rgba(0,0,0,0.7);
+  top: -50.7%;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  
+}
+.detailContainer{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 95%;
+}
+.status{
+  margin: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.statusAct{
+  margin: auto;
+  cursor: help;
+}
+.moreButton{
+  padding: 4px;
+  cursor: pointer;
+  width: 20%;
+  text-align: center;
+  margin: auto;
+  border-style: solid;
+  border-color: var(--firstColor);
+  border-radius: 20px;
+  border-width: 2px;
+  transition: 0.3s;
+}
+.moreButton:hover{
+  background-color: var(--firstColor);
+  color: black;
 }

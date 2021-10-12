@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+
 import "./Navbar.css";
 
 const NavbarM = () => {
@@ -11,7 +13,7 @@ const NavbarM = () => {
   return (
     <div className="navwrapper">
       <div className="NavbarContainer">
-        <div className='menuIcon' onClick={changeState}>
+        <div className="menuIcon" onClick={changeState}>
           {menuState ? (
             <i class="fas fa-times burgericon"></i>
           ) : (
@@ -24,20 +26,32 @@ const NavbarM = () => {
         </span>
       </div>
       {menuState ? (
-          <div className='subMenu'>
-              <ul className='subMenuItems'>
-                  <li className='subMenuItem'>jeedn</li>
-                  <hr/>
-                  <li className='subMenuItems'>dwa</li>
-                  <hr/>
-                  <li className='subMenuItems'>dwa</li>
-
-              </ul>
-          </div>
-      ):
-      (
-        (null)
-      )}
+        <div className="subMenu">
+          <ul className="subMenuItems">
+            <li className="subMenuItem">
+              <NavLink
+                exact
+                to="/"
+                activeStyle={{
+                  color: "var(--detailColor)",
+                }}
+              >
+                <div className="menuItem">Home</div>
+              </NavLink>
+            </li>
+            <hr />
+            <li className="subMenuItem"><NavLink
+                exact
+                to="/nav"
+                activeStyle={{
+                  color: "var(--detailColor)",
+                }}
+              >
+                <div className="menuItem">navitem</div>
+              </NavLink></li>
+          </ul>
+        </div>
+      ) : null}
     </div>
   );
 };
