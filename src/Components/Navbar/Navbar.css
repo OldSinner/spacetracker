@@ -1,9 +1,13 @@
-.topwrapper{
+a{
+    text-decoration: none;
+    color: var(--firstColor) ;
+}
+.navwrapper{
     position: fixed;
     width: 100%;
     top: 0px;
 }
-.topbarm{
+.NavbarContainer{
     z-index: 10;
     padding: 10px;
     display: flex;
@@ -29,10 +33,16 @@
     height: 40px;
 }
 .logoMain{
+    transition: 0.3s;
     padding-left: 20px;
     font-size: 30px;
 }
+.logoMain:hover .secondLogo{
+    color: var(--firstColor);
+
+}
 .secondLogo{
+    transition: 0.3s;
     color: var(--detailColor);
 }
 #menuExpand{
@@ -46,7 +56,15 @@
     animation: slideDown 0.3s 1;
     animation-fill-mode: forwards;
 }
-ul{
+.NavbarD{
+    display: flex;
+    justify-items: center;
+    align-items: baseline;
+}
+.linksNavbar{
+    font-size: 20px;
+}
+.subMenuItems{
     text-align: center;
     margin: 0;
     padding: 0;
@@ -55,7 +73,19 @@ ul{
     flex-direction: column;
     align-items: center;
 }
-li{
+.menuItem{
+    transition: 0.3s;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.menuItem:hover{
+    color: var(--detailColor);
+}
+.logoMain:hover{
+    color: var(--detailColor);
+}
+
+.subMenuItem{
     margin: 10px;
     list-style: none;
     width: 50%;

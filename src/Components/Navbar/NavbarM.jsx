@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import "./TopBar.css";
+import "./Navbar.css";
 
 const NavbarM = () => {
   const [menuState, setMenuState] = useState(false);
@@ -9,8 +9,8 @@ const NavbarM = () => {
     setMenuState(!menuState);
   };
   return (
-    <div className="topwrapper">
-      <div className="topbarm">
+    <div className="navwrapper">
+      <div className="NavbarContainer">
         <div className='menuIcon' onClick={changeState}>
           {menuState ? (
             <i class="fas fa-times burgericon"></i>
@@ -25,12 +25,12 @@ const NavbarM = () => {
       </div>
       {menuState ? (
           <div className='subMenu'>
-              <ul>
-                  <li>jeedn</li>
+              <ul className='subMenuItems'>
+                  <li className='subMenuItem'>jeedn</li>
                   <hr/>
-                  <li>dwa</li>
+                  <li className='subMenuItems'>dwa</li>
                   <hr/>
-                  <li>dwa</li>
+                  <li className='subMenuItems'>dwa</li>
 
               </ul>
           </div>

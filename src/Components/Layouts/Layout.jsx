@@ -1,8 +1,9 @@
 import React from "react";
 import "./Layout.css";
 import { Breakpoint } from "react-socks";
-import NavbarM from "../TopBar/NavbarM";
-import NavbarD from "../TopBar/NavbarD";
+import NavbarM from "../Navbar/NavbarM";
+import NavbarD from "../Navbar/NavbarD";
+
 
 
 const Layout = ({ children }) => {
