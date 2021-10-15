@@ -7,16 +7,18 @@ import LaunchPage from "./Pages/LaunchPage";
 
 function App() {
   return (
-    <BreakpointProvider>
-      <Router>
-        <Layout>
-          <Switch>
-            <Route path="/" exact component={MainPage} />
-            <Route path='/launch/:id' exact component={LaunchPage} />
-          </Switch>
-        </Layout>
-      </Router>
-    </BreakpointProvider>
+    
+      <BreakpointProvider>
+        <Router>
+          <Layout>
+            <Switch>
+              <Route path="/" exact component={MainPage} />
+              <Route path="/launch/:id" exact component={LaunchPage} />
+            </Switch>
+          </Layout>
+        </Router>
+      </BreakpointProvider>
+    
   );
 }
 

@@ -14,9 +14,7 @@
   border-bottom-style: solid;
 
 }
-.desc{
-    font-size: 30px;
-}
+
 .w-img {
   height: 500px;
   -webkit-animation: fadein 2s;
@@ -45,8 +43,13 @@
 
 .cardTitle {
   text-align: center;
+  height: 10%;
+}
+.carFooter{
+    height: 10%;
 }
 .cardBody {
+    height: 80%;
     display: grid;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -55,16 +58,19 @@
 }
 .bodypart{
     text-align: center;
-
+    font-size: 28px;
     margin: 10px;
     height: 100%;
-
+    padding: 10px;
+    overflow: hidden;
 }
+.desc::-webkit-scrollbar {
+    display: none;
+  }
 td{
     cursor: default;
 }
 .params{
-    font-size: 30px;
     border-collapse: collapse;
 }
 @media only screen and (max-width: 600px) {
