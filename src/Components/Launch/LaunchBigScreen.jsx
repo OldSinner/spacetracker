@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Launch from "./Launch";
 import axios from "axios";
-import loading from "../../assets/loading.svg";
 import "./LaunchBigScreen.css";
 import { Breakpoint } from "react-socks";
+import Loading from "../Loading";
 
 export default function LaunchBigScreen() {
   const [error, setError] = useState(null);
@@ -33,10 +33,7 @@ export default function LaunchBigScreen() {
     return (
       <div className="bigScreen">
         <div className="title">Upcoming Launch</div>
-        <img className="loadingLogo" src={loading} alt="Loading" />
-        <div className="slidder subtitle">
-          We connect with the cosmos! Please wait!
-        </div>
+        <Loading/>
       </div>
     );
   } else {

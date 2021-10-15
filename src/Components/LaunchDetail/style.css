@@ -1,0 +1,81 @@
+.cardwrapper {
+    border-top-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 500px;
+  -webkit-animation: fadein 2s;
+  -moz-animation: fadein 2s;
+  -ms-animation: fadein 2s;
+  -o-animation: fadein 2s;
+  animation: fadein 2s;
+  border-bottom-style: solid;
+
+}
+.desc{
+    font-size: 30px;
+}
+.w-img {
+  height: 500px;
+  -webkit-animation: fadein 2s;
+  -moz-animation: fadein 2s;
+  -ms-animation: fadein 2s;
+  -o-animation: fadein 2s;
+  animation: fadein 2s;
+}
+.cardimg {
+  object-fit: cover;
+  width: 30%;
+}
+.card {
+    
+  width: 100%;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.cardTitle {
+  text-align: center;
+}
+.cardBody {
+    display: grid;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    justify-content: center;
+}
+.bodypart{
+    text-align: center;
+
+    margin: 10px;
+    height: 100%;
+
+}
+td{
+    cursor: default;
+}
+.params{
+    font-size: 30px;
+    border-collapse: collapse;
+}
+@media only screen and (max-width: 600px) {
+    .cardwrapper {
+      flex-direction: column;
+    }
+    .cardimg {
+      width: 100%;
+    }
+    .cardBody{
+      grid-template-columns: repeat(1, 1fr);
+  
+    }
+  }
