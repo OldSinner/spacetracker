@@ -3,6 +3,8 @@ import axios from "axios";
 import Loading from "../Components/Loading";
 import { useParams } from "react-router";
 import MissionParameter from "../Components/LaunchDetail/MissionParameter";
+import Program from "../Components/LaunchDetail/Program";
+
 export default function LaunchPage() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -30,15 +32,19 @@ export default function LaunchPage() {
     );
   } else if (!isLoaded) {
     return (
-      <div className="bigScreen">
-        <div className="title">Upcoming Launch</div>
         <Loading />
-      </div>
     );
   } else {
       console.log(launch);
     return <div className="list">
         <MissionParameter missionInfo={launch.data}/>
+        <div className='carddiv'/>
+        {
+            (launch.data.program.length) ? (
+                <Program launchInfo={launch.data}/>
+            ):null
+        }
+        
     </div>
   }
 }

@@ -12,7 +12,7 @@ export default function LaunchBigScreen() {
 
   useEffect(() => {
     axios
-      .get("https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?limit=3")
+      .get("https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?limit=3&offset=6")
       .then((res) => {
         setLaunch(res);
         setIsLoaded(true);

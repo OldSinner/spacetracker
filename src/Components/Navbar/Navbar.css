@@ -6,6 +6,7 @@ a{
     position: fixed;
     width: 100%;
     top: 0px;
+    z-index: 10;
 }
 .NavbarContainer{
     z-index: 10;

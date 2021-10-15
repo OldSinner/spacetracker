@@ -1,22 +1,28 @@
 .cardwrapper {
-    border-top-style: solid;
-    border-radius: 5px;
-    border-width: 1px;
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 500px;
   -webkit-animation: fadein 2s;
   -moz-animation: fadein 2s;
   -ms-animation: fadein 2s;
   -o-animation: fadein 2s;
   animation: fadein 2s;
-  border-bottom-style: solid;
-
+}
+.cardbgone{
+    background-color: rgb(83, 83, 83);
+}
+.cardbtwo{
+    background-color: rgb(65, 80, 87);
+}
+.list{
+    display: grid;
 }
 
+.onerow{
+    grid-template-columns: repeat(2, 1fr);
+
+}
 .w-img {
-  height: 500px;
   -webkit-animation: fadein 2s;
   -moz-animation: fadein 2s;
   -ms-animation: fadein 2s;
@@ -43,44 +49,177 @@
 
 .cardTitle {
   text-align: center;
-  height: 10%;
 }
 .carFooter{
     height: 10%;
 }
 .cardBody {
     height: 80%;
-    display: grid;
+    position: relative;
+}
+.bodypart::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.bodypart::-webkit-scrollbar
+{
+	width: 6px;
+    height: 90%;
+	background-color: #F5F5F5;
+}
+
+.bodypart::-webkit-scrollbar-thumb
+{
+	background-color: var(--secondBackgroud);
+}
+.gridTwoRow{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
     justify-content: center;
 }
+.cardBodyWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+tr{
+    border-bottom-style: solid;
+    border-width: 1px;
+}
+.dspNone{
+    display: none;
+}
+.dspInline{
+    display: inline;
+}
+.fs45{
+    font-size: 45px;
+}
+.btnHover{
+    color: var(--firstColor);
+    transition: 0.2s;
+    cursor: pointer;
+}
+.btnHover:hover{
+    color: var(--detailColor);
+}
+.notop{
+    margin-top: 0;
+}
+.agency{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.agencyImg{
+   
+    object-fit: scale-down;
+    width: 100px;
+    height: 100px;
+}
+.slidder{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
 .bodypart{
     text-align: center;
     font-size: 28px;
     margin: 10px;
-    height: 100%;
+    height: 95%;
     padding: 10px;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 20px;
 }
-.desc::-webkit-scrollbar {
-    display: none;
-  }
+
 td{
     cursor: default;
+}
+
+.height500{
+    height: 500px;
+
+}
+p{
+    margin: 2px;
+}
+h3{
+    margin: 2px;
+}
+.w100{
+    width: 100%;
+    margin-left: -3px;
+}
+.detColor{
+    color: var(--detailColor);
 }
 .params{
     border-collapse: collapse;
 }
+.smcard{
+    width: 80%;
+    background-color: rgba(0,0,0,0.3);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+}
+.programLogo{
+    height: 10%;
+    width: 10%;
+}
+.smcardTitle{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.gridFourRow{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    justify-content: center;
+}
+.fs20{
+font-size: 20px;
+}
+.margin10{
+    margin: 10px;
+}
+.text-al-center{
+    text-align: center;
+}
+.smBodyItem{
+    margin: 10px;
+    border-radius: 30px;
+    background-color: rgba(0,0,0,0.3);
+}
+.over9000{
+    width: 300%;
+    margin: auto;
+}
 @media only screen and (max-width: 600px) {
     .cardwrapper {
       flex-direction: column;
+      height: auto;
+
     }
     .cardimg {
       width: 100%;
     }
-    .cardBody{
+    .gridTwoRow{
       grid-template-columns: repeat(1, 1fr);
   
     }
