@@ -28,7 +28,6 @@ const Agency = ({ id }) => {
   } else if (!isLoaded) {
     return <Loading />;
   } else {
-    console.log(agency);
     return (
       <div className="agency">
         <h2 className="text-al-center detColor">Agency:</h2>

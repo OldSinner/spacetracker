@@ -4,6 +4,7 @@ import Loading from "../Components/Loading";
 import { useParams } from "react-router";
 import MissionParameter from "../Components/LaunchDetail/MissionParameter";
 import Program from "../Components/LaunchDetail/Program";
+import RocketParameter from "../Components/LaunchDetail/RocketParameter";
 
 export default function LaunchPage() {
   const [error, setError] = useState(null);
@@ -13,7 +14,9 @@ export default function LaunchPage() {
 
   useEffect(() => {
     axios
-      .get("https://lldev.thespacedevs.com/2.2.0/launch/"+id+"/?format=json")
+      .get(
+        "https://lldev.thespacedevs.com/2.2.0/launch/" + id + "/?format=json"
+      )
       .then((res) => {
         setLaunch(res);
         setIsLoaded(true);
@@ -31,21 +34,26 @@ export default function LaunchPage() {
       </div>
     );
   } else if (!isLoaded) {
-    return (
-        <Loading />
-    );
+    return <Loading />;
   } else {
-      console.log(launch);
-    return <div className="list">
-        <MissionParameter missionInfo={launch.data}/>
-        <div className='carddiv'/>
-        {
-            (launch.data.program.length) ? (
-                <Program launchInfo={launch.data}/>
-            ):null
-        }
-        
-    </div>
+    console.log(launch);
+    return (
+      <div className="list">
+        <MissionParameter missionInfo={launch.data} />
+        <div className="carddiv" />
+        {launch.data.program.length != 0 ? (
+          <>
+            <Program launchInfo={launch.data} />
+            <div className="carddiv" />
+          </>
+        ) : null}
+        {launch.data.rocket != null ? (
+          <>
+          <RocketParameter rocketInfo={launch.data.rocket} />
+          <div className="carddiv" />
+          </>
+        ) : null}
+      </div>
+    );
   }
 }
-
