@@ -5,6 +5,7 @@ import { useParams } from "react-router";
 import MissionParameter from "../Components/LaunchDetail/MissionParameter";
 import Program from "../Components/LaunchDetail/Program";
 import RocketParameter from "../Components/LaunchDetail/RocketParameter";
+import PadDetail from "../Components/LaunchDetail/PadDetail";
 
 export default function LaunchPage() {
   const [error, setError] = useState(null);
@@ -53,6 +54,11 @@ export default function LaunchPage() {
           <div className="carddiv" />
           </>
         ) : null}
+        {launch.data.pad != null ? (
+          <>
+          <PadDetail padInfo={launch.data.pad}/>
+          </>
+        ):null}
       </div>
     );
   }

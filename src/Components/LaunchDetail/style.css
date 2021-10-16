@@ -17,6 +17,9 @@
 .cardbthree{
     background-color: rgb(22, 49, 63);
 }
+.cardbfour{
+    background-color: rgb(33, 37, 39);
+}
 .margin30{
     margin: 30px;
 }
@@ -248,6 +251,12 @@ font-size: 20px;
 .over9000{
     width: 300%;
     margin: auto;
+}
+.padImg{
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%
 }
 @media only screen and (max-width: 600px) {
     .cardwrapper {
