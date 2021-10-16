@@ -14,13 +14,40 @@
 .cardbtwo{
     background-color: rgb(65, 80, 87);
 }
+.cardbthree{
+    background-color: rgb(22, 49, 63);
+}
+.margin30{
+    margin: 30px;
+}
 .list{
     display: grid;
 }
-
+.w80{
+    width: 80%;
+}
+.rocketWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
 .onerow{
     grid-template-columns: repeat(2, 1fr);
 
+}
+.cardflex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.para{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 .w-img {
   -webkit-animation: fadein 2s;
@@ -49,9 +76,11 @@
 
 .cardTitle {
   text-align: center;
+  width: 100%;
 }
 .carFooter{
     height: 10%;
+    width: 100%;
 }
 .cardBody {
     height: 80%;
@@ -62,7 +91,9 @@
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	background-color: #F5F5F5;
 }
-
+.fs30{
+    font-size: 30px;
+}
 .bodypart::-webkit-scrollbar
 {
 	width: 6px;
@@ -79,6 +110,14 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
     justify-content: center;
+    
+}
+.gridTwoRowAuto{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    justify-content: center;
+    height: auto;
 }
 .cardBodyWrapper{
     display: flex;
@@ -135,7 +174,6 @@ tr{
     text-align: center;
     font-size: 28px;
     margin: 10px;
-    height: 95%;
     padding: 10px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -176,8 +214,8 @@ h3{
     border-radius: 20px;
 }
 .programLogo{
-    height: 10%;
-    width: 10%;
+    height: 150px;
+    width: 150px;
 }
 .smcardTitle{
     text-align: center;
@@ -202,6 +240,7 @@ font-size: 20px;
     text-align: center;
 }
 .smBodyItem{
+    padding: 5px;
     margin: 10px;
     border-radius: 30px;
     background-color: rgba(0,0,0,0.3);
@@ -221,6 +260,9 @@ font-size: 20px;
     }
     .gridTwoRow{
       grid-template-columns: repeat(1, 1fr);
-  
+    }
+    .gridTwoRowAuto{
+      grid-template-columns: repeat(1, 1fr);
+
     }
   }
