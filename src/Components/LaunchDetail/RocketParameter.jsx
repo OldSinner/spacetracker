@@ -3,10 +3,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Loading from "../Loading";
 import { Link } from "react-router-dom";
-import NotKnown, { EmptyRow } from "./NotKnown";
+import { EmptyRow } from "./EmptyRow";
 
 function RocketParameter({ rocketInfo }) {
-  console.log(rocketInfo);
   return (
     <div className="cardwrapper cardbthree">
       <div className="card">
@@ -22,35 +21,35 @@ function RocketParameter({ rocketInfo }) {
                 <table className="fs20 param">
                   <EmptyRow
                     rowtitle="Full Name:"
-                    text={rocketInfo.configuration.full_name}
+                    text={rocketInfo?.configuration?.full_name}
                   />
                   <EmptyRow
                     rowtitle="Family:"
-                    text={rocketInfo.configuration.family}
+                    text={rocketInfo?.configuration?.family}
                   />
                   <EmptyRow
                     rowtitle="Manufacturer:"
-                    text={rocketInfo.configuration.manufacturer.name}
+                    text={rocketInfo?.configuration?.manufacturer?.name}
                   />
                   <EmptyRow
                     rowtitle="Variant:"
-                    text={rocketInfo.configuration.variant}
+                    text={rocketInfo?.configuration?.variant}
                   />
                   <EmptyRow
                     rowtitle="Max Stages:"
-                    text={rocketInfo.configuration.max_stage}
+                    text={rocketInfo?.configuration?.max_stage}
                   />
                   <EmptyRow
                     rowtitle="Launch Cost:"
-                    text={rocketInfo.configuration.launch_cost}
+                    text={rocketInfo?.configuration?.launch_cost}
                   />
                   <EmptyRow
                     rowtitle="Launch Mass:"
-                    text={rocketInfo.configuration.launch_mass}
+                    text={rocketInfo?.configuration?.launch_mass}
                   />
                 </table>
                 <div className="fs20 text-al-center">
-                  {rocketInfo.configuration.description}
+                  {rocketInfo?.configuration?.description}
                 </div>
               </div>
             </div>
@@ -65,18 +64,18 @@ function RocketParameter({ rocketInfo }) {
                     {rocketInfo.launcher_stage.map((stage) => (
                       <div className="smBodyItem">
                         <h2 className="text-al-center detColor">
-                          {stage.launcher.serial_number}
+                          {stage.launcher?.serial_number}
                         </h2>
                         <div className="fs20">
                           <div className="detColor">Type:</div> {stage.type}
                         </div>
                         <div className="fs20">
                           <div className="detColor">Details:</div>{" "}
-                          {stage.launcher.details}
+                          {stage.launcher?.details}
                         </div>
                         <div className="fs20">
                           <div className="detColor">Status:</div>{" "}
-                          {stage.launcher.status}
+                          {stage.launcher?.status}
                         </div>
                       </div>
                     ))}
@@ -85,19 +84,19 @@ function RocketParameter({ rocketInfo }) {
                   <div className="smcardBody">
                     <div className="smBodyItem">
                     <h2 className="text-al-center detColor">
-                          {rocketInfo.spacecraft_stage.spacecraft.name}
+                          {rocketInfo.spacecraft_stage?.spacecraft?.name}
                         </h2>
                         <div className="fs20">
                           <div className="detColor">Status:</div>{" "}
-                          {rocketInfo.spacecraft_stage.spacecraft.status.name}
+                          {rocketInfo.spacecraft_stage?.spacecraft?.status?.name}
                         </div>
                         <div className="fs20 wordbrk">
                           <div className="detColor">Details:</div>{" "}
-                          {rocketInfo.spacecraft_stage.spacecraft.description}
+                          {rocketInfo.spacecraft_stage?.spacecraft?.description}
                         </div>
                         <div className="fs20">
                           <div className="detColor">Destination:</div>{" "}
-                          {rocketInfo.spacecraft_stage.destination}
+                          {rocketInfo.spacecraft_stage?.destination}
                         </div>
                     </div>
                   </div>

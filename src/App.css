@@ -48,6 +48,8 @@ body {
   flex-direction: column;
   margin: auto;
   text-align: center;
+  width: 100vh;
+  height: 25vw;
 }
 .carddiv{
   margin: auto;
@@ -71,4 +73,11 @@ html::-webkit-scrollbar
 html::-webkit-scrollbar-thumb
 {
 	background-color: var(--detailColor);
+}
+.statusPrev{
+  text-align: center;
+  margin: 5px;
+}
+.statusPrev h1 h2 h3{
+  margin: 0;
 }

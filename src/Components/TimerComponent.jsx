@@ -36,7 +36,7 @@ export default function TimerComponents({ date }) {
       </div>
       <div>:</div>
       <div className="timerBlock">
-        <div>{("0" + timeLeft[2]).slice(-2)}</div>{" "}
+        <div>{("0" + timeLeft[2]).slice(-2) }</div>{" "}
         <div className="subTimer">Mins</div>
       </div>
       <div>:</div>

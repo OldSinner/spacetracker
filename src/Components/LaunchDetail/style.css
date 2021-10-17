@@ -183,6 +183,8 @@ tr{
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     background-color: rgba(0,0,0,0.3);
     border-radius: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 td{
@@ -243,7 +245,7 @@ font-size: 20px;
     text-align: center;
 }
 .smBodyItem{
-    padding: 5px;
+    padding: 20px;
     margin: 10px;
     border-radius: 30px;
     background-color: rgba(0,0,0,0.3);

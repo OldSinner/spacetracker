@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import MainPage from "./Pages/MainPage";
 import { BreakpointProvider } from "react-socks";
 import LaunchPage from "./Pages/LaunchPage";
+import LaunchList from "./Pages/LaunchList";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Switch>
               <Route path="/" exact component={MainPage} />
               <Route path="/launch/:id" exact component={LaunchPage} />
+              <Route path="/launchlist/" exact component={LaunchList} />
             </Switch>
           </Layout>
         </Router>

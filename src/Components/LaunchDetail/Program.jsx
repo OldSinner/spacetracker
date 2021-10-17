@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Loading from "../Loading";
 import { Link } from "react-router-dom";
+import Api from "../../Globals/Api";
 
 const Agency = ({ id }) => {
   const [error, setError] = useState(null);
@@ -12,7 +13,7 @@ const Agency = ({ id }) => {
   useEffect(() => {
     axios
       .get(
-        "https://lldev.thespacedevs.com/2.2.0/agencies/" + id + "/?format=json"
+        Api+"/agencies/" + id + "/?format=json"
       )
       .then((res) => {
         setAgency(res.data);
@@ -70,7 +71,6 @@ const Card = ({ Program }) => {
                   if (index + 1 != Program.agencies.length)
                     setActiveId(index + 1);
                   else setActiveId(0);
-                  console.log(Program.agencies[activeId].id);
                 }}
               >
                 <i class="fas fa-angle-right fs45 btnHover"></i>

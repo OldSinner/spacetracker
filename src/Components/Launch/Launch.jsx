@@ -3,8 +3,7 @@ import TimerComponents from "../TimerComponent";
 import ReactTooltip from "react-tooltip";
 import { Link } from "react-router-dom";
 
-export default function Launch({ launchInfo }) {
-  console.log(launchInfo);
+export default function Launch({ launchInfo, timmer }) {
 
   return (
     <div className="wrap">
@@ -12,19 +11,21 @@ export default function Launch({ launchInfo }) {
       <div className="detail">
         <div className="detailContainer">
           <div className="launchTitle">{launchInfo.name} </div>
-          <hr className="hr80" />
-          <div className="launchTimer">
-             
+          <hr className="hr80" /> 
+          {timmer==true ? (<div className="launchTimer">
+            
             Lift Off Time: 
             <TimerComponents date={new Date(launchInfo.window_start)} />
-          </div>
-          <hr className="hr60" />
-          <div className="status">
-            <div>Status: </div>
-            <p className="statusAct" data-tip={launchInfo.status.description}>
+            <hr className="hr60" />
+          
+          </div>): (<div className="statusPrev">
+            <h2>Status: </h2>
+            <h1 className="statusAct" data-tip={launchInfo.status.description}>
               {launchInfo.status.name}
-            </p>
-          </div>
+            </h1>
+          </div>)}
+          
+          
           <Link c to={"/launch/" + launchInfo.id}>
             <div className="moreButton">More</div>
           </Link>

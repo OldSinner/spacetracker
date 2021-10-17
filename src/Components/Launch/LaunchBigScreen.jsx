@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Launch from "./Launch";
 import axios from "axios";
+import Launch from "./Launch";
 import "./LaunchBigScreen.css";
 import { Breakpoint } from "react-socks";
 import Loading from "../Loading";
+import Api from "../../Globals/Api";
 
 export default function LaunchBigScreen() {
   const [error, setError] = useState(null);
@@ -12,7 +13,7 @@ export default function LaunchBigScreen() {
 
   useEffect(() => {
     axios
-      .get("https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?limit=3&offset=6")
+      .get(Api+"/launch/upcoming/?limit=3&offset=3")
       .then((res) => {
         setLaunch(res);
         setIsLoaded(true);
@@ -37,7 +38,6 @@ export default function LaunchBigScreen() {
       </div>
     );
   } else {
-    console.log(launch.data.results[0]);
     return (
       <div className="bigScreen">
         <div className="title">Upcoming Launch</div>
@@ -49,9 +49,9 @@ export default function LaunchBigScreen() {
         </Breakpoint>
         <Breakpoint large up>
           <div className="slidder">
-            <Launch launchInfo={launch.data.results[0]} />
-            <Launch launchInfo={launch.data.results[1]} />
-            <Launch launchInfo={launch.data.results[2]} />
+            <Launch launchInfo={launch.data.results[0]} timmer={1}/>
+            <Launch launchInfo={launch.data.results[1]} timmer={1}/>
+            <Launch launchInfo={launch.data.results[2]} timmer={1}/>
           </div>
         </Breakpoint>
       </div>

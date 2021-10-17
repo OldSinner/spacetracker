@@ -1,0 +1,27 @@
+.listGrid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.listLaunch{
+    margin: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.fs60{
+    font-size: 60px;
+}
+.btnDisable{
+    color: gray;
+    cursor:default;
+}
+@media only screen and (max-width: 700px) {
+    .listGrid{
+    grid-template-columns: repeat(1, 1fr);
+
+    }
+}

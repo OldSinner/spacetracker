@@ -7,7 +7,6 @@ import "./Navbar.css";
 const NavbarM = () => {
   const [menuState, setMenuState] = useState(false);
   const changeState = () => {
-    console.log("ok");
     setMenuState(!menuState);
   };
   return (
@@ -40,15 +39,17 @@ const NavbarM = () => {
               </NavLink>
             </li>
             <hr />
-            <li className="subMenuItem"><NavLink
+            <li className="subMenuItem">
+              <NavLink
                 exact
-                to="/nav"
+                to="/launchlist/0"
                 activeStyle={{
                   color: "var(--detailColor)",
                 }}
               >
-                <div className="menuItem">navitem</div>
-              </NavLink></li>
+                <div className="menuItem">Launch List</div>
+              </NavLink>
+            </li>
           </ul>
         </div>
       ) : null}

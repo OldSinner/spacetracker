@@ -19,10 +19,10 @@ const NavbarD = () => {
           </div>
             
           <div className="linksNavbar">
-          <NavLink  exact to='/nav' activeStyle={{
+          <NavLink  exact to='/launchlist/' activeStyle={{
               color: 'var(--detailColor)'
             }}>
-             <div className="menuItem">navItem</div>
+             <div className="menuItem">Launch List</div>
              </NavLink>
           </div>
           <div className="linksNavbar">

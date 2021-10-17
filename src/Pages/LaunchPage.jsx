@@ -6,6 +6,7 @@ import MissionParameter from "../Components/LaunchDetail/MissionParameter";
 import Program from "../Components/LaunchDetail/Program";
 import RocketParameter from "../Components/LaunchDetail/RocketParameter";
 import PadDetail from "../Components/LaunchDetail/PadDetail";
+import Api from "../Globals/Api";
 
 export default function LaunchPage() {
   const [error, setError] = useState(null);
@@ -16,7 +17,7 @@ export default function LaunchPage() {
   useEffect(() => {
     axios
       .get(
-        "https://lldev.thespacedevs.com/2.2.0/launch/" + id + "/?format=json"
+        Api+"/launch/" + id + "/?format=json"
       )
       .then((res) => {
         setLaunch(res);
@@ -37,7 +38,6 @@ export default function LaunchPage() {
   } else if (!isLoaded) {
     return <Loading />;
   } else {
-    console.log(launch);
     return (
       <div className="list">
         <MissionParameter missionInfo={launch.data} />
