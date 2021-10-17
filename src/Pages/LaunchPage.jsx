@@ -59,6 +59,9 @@ export default function LaunchPage() {
           <PadDetail padInfo={launch.data.pad}/>
           </>
         ):null}
+        {
+          
+        }
       </div>
     );
   }
