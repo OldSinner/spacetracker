@@ -27,7 +27,7 @@ const NavbarM = () => {
       {menuState ? (
         <div className="subMenu">
           <ul className="subMenuItems">
-            <li className="subMenuItem">
+            <li className="subMenuItem ">
               <NavLink
                 exact
                 to="/"
@@ -39,10 +39,10 @@ const NavbarM = () => {
               </NavLink>
             </li>
             <hr />
-            <li className="subMenuItem">
+            <li className="subMenuItem fs20">
               <NavLink
                 exact
-                to="/launchlist/0"
+                to="/launchlist/"
                 activeStyle={{
                   color: "var(--detailColor)",
                 }}

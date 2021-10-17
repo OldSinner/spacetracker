@@ -15,7 +15,7 @@ function App() {
             <Switch>
               <Route path="/" exact component={MainPage} />
               <Route path="/launch/:id" exact component={LaunchPage} />
-              <Route path="/launchlist/" exact component={LaunchList} />
+              <Route path="/launchlist/"  component={LaunchList} />
             </Switch>
           </Layout>
         </Router>
