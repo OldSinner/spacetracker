@@ -7,12 +7,12 @@ export default function Launch({ launchInfo, timmer }) {
 
   return (
     <div className="wrap">
-      <img className="bg-launch-img" src={launchInfo.image} />
+      <img alt='Launch img' className="bg-launch-img" src={launchInfo.image} />
       <div className="detail">
         <div className="detailContainer">
           <div className="launchTitle">{launchInfo.name} </div>
           <hr className="hr80" /> 
-          {timmer==true ? (<div className="launchTimer">
+          {timmer===true ? (<div className="launchTimer">
             
             Lift Off Time: 
             <TimerComponents date={new Date(launchInfo.window_start)} />

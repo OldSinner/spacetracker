@@ -53,13 +53,13 @@ export function CrewCard({ crew }) {
             <div className="detColor">Social:</div>
             <div className="btnGroup">
             {
-                crew?.astronaut?.wiki? (<a target="_blank" className='socialIcon' href={crew.astronaut.wiki}><i className="fab fa-wikipedia-w"></i></a>):null
+                crew?.astronaut?.wiki? (<a rel="noreferrer" target="_blank" className='socialIcon' href={crew.astronaut.wiki}><i className="fab fa-wikipedia-w"></i></a>):null
             }
              {
-                crew?.astronaut?.instagram? (<a target="_blank" className='socialIcon' href={crew.astronaut.instagram}><i className="fab fa-instagram"></i></a>):null
+                crew?.astronaut?.instagram? (<a rel="noreferrer" target="_blank" className='socialIcon' href={crew.astronaut.instagram}><i className="fab fa-instagram"></i></a>):null
             }
              {
-                crew?.astronaut?.twitter? (<a target="_blank" className='socialIcon' href={crew.astronaut.twitter}><i className="fab fa-twitter"></i></a>):null
+                crew?.astronaut?.twitter? (<a rel="noreferrer" target="_blank" className='socialIcon' href={crew.astronaut.twitter}><i className="fab fa-twitter"></i></a>):null
             }
             </div>
           </div>

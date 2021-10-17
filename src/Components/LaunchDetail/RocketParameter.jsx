@@ -1,8 +1,4 @@
 import "./style.css";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import Loading from "../Loading";
-import { Link } from "react-router-dom";
 import { EmptyRow } from "./EmptyRow";
 
 function RocketParameter({ rocketInfo }) {
@@ -55,7 +51,7 @@ function RocketParameter({ rocketInfo }) {
                 </div>
               </div>
             </div>
-            {rocketInfo.launcher_stage.length != 0 ||
+            {rocketInfo.launcher_stage.length !== 0 ||
             rocketInfo.spacecraft_stage != null ? (
               <div className="smcard">
                 <div className="smcardTitle">

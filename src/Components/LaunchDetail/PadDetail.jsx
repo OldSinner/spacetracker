@@ -14,7 +14,7 @@ function PadDetail({ padInfo }) {
             <h1 className="margin10">{padInfo.name}</h1>
             <h2 className="detColor margin10">Location:</h2>
             <div className="gridTwoRow">
-              <img className="padImg margin10"  src={padInfo.map_image} />
+              <img className="padImg margin10" alt='Map'  src={padInfo.map_image} />
               <div className='margin10'>
                 <h2 className="detColor">Location:</h2>
                 <h3>{padInfo.location.name}</h3>

@@ -32,7 +32,7 @@ const Agency = ({ id }) => {
     return (
       <div className="agency">
         <h2 className="text-al-center detColor">Agency:</h2>
-        <img className="agencyImg" src={agency.logo_url} />
+        <img alt='Agency Logo' className="agencyImg" src={agency.logo_url} />
         <p className="fs20 text-al-center margin10 notop">
           {agency.name} ({agency.abbrev})
         </p>
@@ -50,7 +50,7 @@ const Card = ({ Program }) => {
   return (
     <div className="smcard">
       <div className="smcardTitle">
-        <img className="programLogo" src={Program.image_url} />
+        <img alt='Program Logo' className="programLogo" src={Program.image_url} />
         <h1 className="detColor">{Program.name}</h1>
       </div>
       <hr className="hr80" />
@@ -59,7 +59,7 @@ const Card = ({ Program }) => {
           <h2 className="text-al-center detColor">Description:</h2>
           <p className="fs20 text-al-center margin10">{Program.description}</p>
         </div>
-        {Program.agencies.length != 0 ? (
+        {Program.agencies.length !== 0 ? (
           <div className="smBodyItem">
             <div className="slidder">
               <i className="fas fa-angle-left fs45 btnHover"></i>
@@ -68,7 +68,7 @@ const Card = ({ Program }) => {
                 className="slideButton"
                 onClick={() => {
                   const index = activeId;
-                  if (index + 1 != Program.agencies.length)
+                  if (index + 1 !== Program.agencies.length)
                     setActiveId(index + 1);
                   else setActiveId(0);
                 }}

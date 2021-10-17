@@ -11,7 +11,7 @@ export function ListLaunchD({ title }) {
   const [uplaunch, setLaunch] = useState([]);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  var timer = title.toLowerCase() == "upcoming" ? true : false;
+  var timer = title.toLowerCase() === "upcoming" ? true : false;
   useEffect(() => {
     axios
       .get(
@@ -25,7 +25,7 @@ export function ListLaunchD({ title }) {
         setError(error);
         setIsLoaded(true);
       });
-  }, [page]);
+  }, [page, title]);
 
   if (error) {
     return (
@@ -81,7 +81,7 @@ export function ListLaunchM({ title }) {
   const [uplaunch, setLaunch] = useState([]);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  var timer = title.toLowerCase() == "upcoming" ? true : false;
+  var timer = title.toLowerCase() === "upcoming" ? true : false;
   useEffect(() => {
     axios
       .get(
@@ -95,6 +95,7 @@ export function ListLaunchM({ title }) {
         setError(error);
         setIsLoaded(true);
       });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
   if (error) {

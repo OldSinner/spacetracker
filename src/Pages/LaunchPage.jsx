@@ -26,6 +26,7 @@ export default function LaunchPage() {
         setError(error);
         setIsLoaded(true);
       });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   if (error) {
     return (
@@ -43,7 +44,7 @@ export default function LaunchPage() {
         <MissionParameter missionInfo={launch.data} />
         <div className="carddiv" />
      
-        {launch.data.program.length != 0 ? (
+        {launch.data.program.length !== 0 ? (
           <>
             <Program launchInfo={launch.data} />
             <div className="carddiv" />
