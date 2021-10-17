@@ -2,15 +2,18 @@ import "./ListLaunch.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Loading from "../Loading";
-
 import Launch from "../Launch/Launch";
 import Api from "../../Globals/Api";
+import Pagination from '@material-ui/lab/Pagination';
 
 export function ListLaunchD({ title }) {
   const [page, setPage] = useState(0);
   const [uplaunch, setLaunch] = useState([]);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const handleChange = (event, value) => {
+    setPage(value-1);
+  };
   var timer = title.toLowerCase() === "upcoming" ? true : false;
   useEffect(() => {
     axios
@@ -36,74 +39,44 @@ export function ListLaunchD({ title }) {
   } else if (!isLoaded) {
     return (
       <div className="listLaunch">
-         {page > 0 ? (
-          <i
-          className="fas fa-angle-left fs60 btnHover"
-            onClick={() => {
-              setPage(page - 1);
-              setIsLoaded(false);
-            }}
-          ></i>
-        ) : (
-          <i
-          className="fas fa-angle-left fs60 btnDisable"
-          ></i>
-        )}
-        <div>
           <div className="detColor fs45 text-al-center">{title} launch</div>
+        <div className='loading'>
           <div className="listGrid">
             <Loading/>
             <Loading/>
             <Loading/>
-
           </div>
-        </div>
-        <i
-          className="fas fa-angle-right fs60 btnHover"
-          onClick={() => {
-            setPage(page + 1);
-            setIsLoaded(false);
-          }}
-        ></i>
+        </div>    
       </div>
     );
   } else {
     return (
       <div className="listLaunch">
-        {page > 0 ? (
-          <i
-          className="fas fa-angle-left fs60 btnHover"
-            onClick={() => {
-              setPage(page - 1);
-              setIsLoaded(false);
-            }}
-          ></i>
-        ) : (
-          <i
-          className="fas fa-angle-left fs60 btnDisable"
-          ></i>
-        )}
-
         <div>
           <div className="detColor fs60 text-al-center">{title} launch</div>
           <div className="listGrid">
             <Launch launchInfo={uplaunch.data.results[0]} timmer={timer} />
             <Launch launchInfo={uplaunch.data.results[1]} timmer={timer} />
             <Launch launchInfo={uplaunch.data.results[2]} timmer={timer} />
+            <Pagination count={Math.floor(uplaunch.data.count/3)} color="primary" showLastButton  onChange={handleChange} size="large" page={page+1}/>
           </div>
         </div>
-        <i
+        {/* <i
           className="fas fa-angle-right fs60 btnHover"
           onClick={() => {
             setPage(page + 1);
             setIsLoaded(false);
           }}
-        ></i>
+        ></i> */}
       </div>
     );
   }
 }
 
+
+
+
+// MOBILE -------------------------------------------------------
 export function ListLaunchM({ title }) {
   const [page, setPage] = useState(0);
   const [uplaunch, setLaunch] = useState([]);

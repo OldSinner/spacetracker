@@ -50,6 +50,7 @@ body {
   text-align: center;
   width: auto;
   height: auto;
+  justify-self: center;
 }
 .carddiv{
   margin: auto;

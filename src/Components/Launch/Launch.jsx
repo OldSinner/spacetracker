@@ -13,7 +13,7 @@ export default function Launch({ launchInfo, timmer }) {
       <div className="detail">
         <div className="detailContainer">
           <div className="launchTitle">{launchInfo.name} </div>
-          <hr className="hr80" /> 
+          <hr className="hr80 m-top-0" /> 
           {timmer===true ? (<div className="launchTimer">
             
             Lift Off Time: 

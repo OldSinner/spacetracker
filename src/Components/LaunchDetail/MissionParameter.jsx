@@ -1,10 +1,12 @@
 import "./style.css";
 import ReactTooltip from "react-tooltip";
+import NoImg from "./../../assets/noimg.jpg"
+
 //TODO REPAR
 export default function MissionParameter({ missionInfo }) {
   return (
     <div className="height500 cardwrapper w-img cardbgone">
-      <img className="cardimg" src={missionInfo.image} alt="" />
+      <img className="cardimg" src={missionInfo.image? missionInfo.image : NoImg} alt="" />
       <div className="card">
         <div className="cardTitle">
           <h1 className="detColor">{missionInfo.name}</h1>

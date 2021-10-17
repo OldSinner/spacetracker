@@ -44,7 +44,7 @@ export default function LaunchBigScreen() {
 
         <Breakpoint medium down>
           <div className="slidder">
-            <Launch launchInfo={launch.data.results[0]} />
+            <Launch launchInfo={launch.data.results[0]} timmer={1}/>
           </div>
         </Breakpoint>
         <Breakpoint large up>
