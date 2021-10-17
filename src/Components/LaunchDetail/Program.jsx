@@ -62,7 +62,7 @@ const Card = ({ Program }) => {
         {Program.agencies.length != 0 ? (
           <div className="smBodyItem">
             <div className="slidder">
-              <i class="fas fa-angle-left fs45 btnHover"></i>
+              <i className="fas fa-angle-left fs45 btnHover"></i>
               <Agency id={Program.agencies[activeId].id} />
               <div
                 className="slideButton"
@@ -73,7 +73,7 @@ const Card = ({ Program }) => {
                   else setActiveId(0);
                 }}
               >
-                <i class="fas fa-angle-right fs45 btnHover"></i>
+                <i className="fas fa-angle-right fs45 btnHover"></i>
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@ const Program = ({ launchInfo }) => {
         <div className="cardBody">
           <div className="cardBodyWrapper">
             {launchInfo.program.map((program) => (
-              <Card Program={program} />
+              <Card key="{program}" Program={program} />
             ))}
           </div>
         </div>

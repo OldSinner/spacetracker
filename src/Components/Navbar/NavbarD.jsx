@@ -10,7 +10,7 @@ const NavbarD = () => {
       <div className="NavbarContainer">
         <div className="NavbarD">
           <div className="logoNavbar">
-          <Link exact to='/' >
+          <Link to='/' >
             <span className="logoMain">
               Space
               <span className="secondLogo">Tracker</span>
@@ -19,7 +19,7 @@ const NavbarD = () => {
           </div>
             
           <div className="linksNavbar">
-          <NavLink  exact to='/launchlist/' activeStyle={{
+          <NavLink  to='/launchlist/' activeStyle={{
               color: 'var(--detailColor)'
             }}>
              <div className="menuItem">Launch List</div>

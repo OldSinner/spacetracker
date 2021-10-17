@@ -14,9 +14,9 @@ const NavbarM = () => {
       <div className="NavbarContainer">
         <div className="menuIcon" onClick={changeState}>
           {menuState ? (
-            <i class="fas fa-times burgericon"></i>
+            <i className="fas fa-times burgericon"></i>
           ) : (
-            <i class="fas fa-bars burgericon"></i>
+            <i className="fas fa-bars burgericon"></i>
           )}
         </div>
         <span className="logoMain">
@@ -29,7 +29,6 @@ const NavbarM = () => {
           <ul className="subMenuItems">
             <li className="subMenuItem ">
               <NavLink
-                exact
                 to="/"
                 activeStyle={{
                   color: "var(--detailColor)",
@@ -41,7 +40,6 @@ const NavbarM = () => {
             <hr />
             <li className="subMenuItem fs20">
               <NavLink
-                exact
                 to="/launchlist/"
                 activeStyle={{
                   color: "var(--detailColor)",

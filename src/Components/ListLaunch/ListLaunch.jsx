@@ -44,7 +44,7 @@ export function ListLaunchD({ title }) {
       <div className="listLaunch">
         {page > 0 ? (
           <i
-            class="fas fa-angle-left fs60 btnHover"
+          className="fas fa-angle-left fs60 btnHover"
             onClick={() => {
               setPage(page - 1);
               setIsLoaded(false);
@@ -52,7 +52,7 @@ export function ListLaunchD({ title }) {
           ></i>
         ) : (
           <i
-            class="fas fa-angle-left fs60 btnDisable"
+          className="fas fa-angle-left fs60 btnDisable"
           ></i>
         )}
 
@@ -65,7 +65,7 @@ export function ListLaunchD({ title }) {
           </div>
         </div>
         <i
-          class="fas fa-angle-right fs60 btnHover"
+          className="fas fa-angle-right fs60 btnHover"
           onClick={() => {
             setPage(page + 1);
             setIsLoaded(false);
@@ -114,7 +114,7 @@ export function ListLaunchM({ title }) {
       <div className="listLaunch">
         {page > 0 ? (
           <i
-            class="fas fa-angle-left fs60 btnHover"
+          className="fas fa-angle-left fs60 btnHover"
             onClick={() => {
               setPage(page - 1);
               setIsLoaded(false);
@@ -122,7 +122,7 @@ export function ListLaunchM({ title }) {
           ></i>
         ) : (
           <i
-            class="fas fa-angle-left fs60 btnDisable"
+          className="fas fa-angle-left fs60 btnDisable"
           ></i>
         )}
 
@@ -133,7 +133,7 @@ export function ListLaunchM({ title }) {
           </div>
         </div>
         <i
-          class="fas fa-angle-right fs60 btnHover"
+          className="fas fa-angle-right fs60 btnHover"
           onClick={() => {
             setPage(page + 1);
             setIsLoaded(false);

@@ -7,6 +7,7 @@ import Program from "../Components/LaunchDetail/Program";
 import RocketParameter from "../Components/LaunchDetail/RocketParameter";
 import PadDetail from "../Components/LaunchDetail/PadDetail";
 import Api from "../Globals/Api";
+import CrewDetail from "../Components/LaunchDetail/CrewDetail";
 
 export default function LaunchPage() {
   const [error, setError] = useState(null);
@@ -16,9 +17,7 @@ export default function LaunchPage() {
 
   useEffect(() => {
     axios
-      .get(
-        Api+"/launch/" + id + "/?format=json"
-      )
+      .get(Api + "/launch/" + id + "/?format=json")
       .then((res) => {
         setLaunch(res);
         setIsLoaded(true);
@@ -38,30 +37,39 @@ export default function LaunchPage() {
   } else if (!isLoaded) {
     return <Loading />;
   } else {
+    console.log(launch);
     return (
       <div className="list">
         <MissionParameter missionInfo={launch.data} />
         <div className="carddiv" />
+     
         {launch.data.program.length != 0 ? (
           <>
             <Program launchInfo={launch.data} />
             <div className="carddiv" />
           </>
         ) : null}
-        {launch.data.rocket != null ? (
+           {launch.data?.rocket?.spacecraft_stage?.launch_crew?.length > 0 ||
+        launch.data?.rocket?.spacecraft_stage?.onboard_crew?.length > 0 ||
+        launch.data?.rocket?.spacecraft_stage?.landing_crew?.length > 0 ? (
           <>
-          <RocketParameter rocketInfo={launch.data.rocket} />
-          <div className="carddiv" />
+            <CrewDetail crewInfo={launch.data?.rocket?.spacecraft_stage} />
+            <div className="carddiv" />
           </>
         ) : null}
+        {launch.data.rocket != null ? (
+          <>
+            <RocketParameter rocketInfo={launch.data.rocket} />
+            <div className="carddiv" />
+          </>
+        ) : null}
+
         {launch.data.pad != null ? (
           <>
-          <PadDetail padInfo={launch.data.pad}/>
+            <PadDetail padInfo={launch.data.pad} />
           </>
-        ):null}
-        {
-          
-        }
+        ) : null}
+        
       </div>
     );
   }

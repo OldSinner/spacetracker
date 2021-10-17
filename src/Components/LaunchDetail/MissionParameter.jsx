@@ -2,7 +2,6 @@ import "./style.css";
 import ReactTooltip from "react-tooltip";
 //TODO REPAR
 export default function MissionParameter({ missionInfo }) {
-  console.log(missionInfo);
   return (
     <div className="height500 cardwrapper w-img cardbgone">
       <img className="cardimg" src={missionInfo.image} alt="" />
