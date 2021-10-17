@@ -1,6 +1,5 @@
 .wrap {
   flex-basis: 100%;
-  background-color: brown;
   width: auto;
   height: 500px;
   border-radius: 20px;
@@ -45,8 +44,14 @@ box-shadow: 5px 5px 16px 5px rgba(0,0,0,0.25);
   background-color: rgba(0,0,0,0.7);
   top: -50.7%;
   border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  
+  border-bottom-left-radius: 20px; 
+}
+.n-img{
+  height:auto
+}
+.n-img .detail{
+  top: 0%;
+  height: auto;
 }
 .detailContainer{
   display: flex;

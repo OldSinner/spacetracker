@@ -16,7 +16,7 @@ function PadDetail({ padInfo }) {
             <div className="gridTwoRow">
               <img className="padImg margin10" alt='Map'  src={padInfo.map_image} />
               <div className='margin10'>
-                <h2 className="detColor">Location:</h2>
+                <h2 className="detColor">Place:</h2>
                 <h3>{padInfo.location.name}</h3>
                 <h3>{padInfo.location.country_code}</h3>
                 <h3>{padInfo.latitude} lat</h3>

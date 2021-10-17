@@ -42,14 +42,14 @@ body {
   font-size: 20px;
 }
 .loadingComp{
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: auto;
   text-align: center;
-  width: 100vh;
-  height: 25vw;
+  width: auto;
+  height: auto;
 }
 .carddiv{
   margin: auto;

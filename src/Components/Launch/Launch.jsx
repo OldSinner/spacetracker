@@ -2,12 +2,14 @@ import "./Launch.css";
 import TimerComponents from "../TimerComponent";
 import ReactTooltip from "react-tooltip";
 import { Link } from "react-router-dom";
+import NoImg from "./../../assets/noimg.jpg"
 
 export default function Launch({ launchInfo, timmer }) {
 
   return (
-    <div className="wrap">
-      <img alt='Launch img' className="bg-launch-img" src={launchInfo.image} />
+    <>
+    <div className='wrap'>
+      <img alt='Launch img' className="bg-launch-img" src={launchInfo.image?launchInfo.image : NoImg}/>
       <div className="detail">
         <div className="detailContainer">
           <div className="launchTitle">{launchInfo.name} </div>
@@ -33,5 +35,6 @@ export default function Launch({ launchInfo, timmer }) {
       </div>
       <ReactTooltip place="top" type="info" effect="float" />
     </div>
+    </>
   );
 }

@@ -1,4 +1,6 @@
 import React from "react";
+import NoImg from "./../../assets/noimg.jpg"
+
 function GetAstro(crewArrays) {
   var crews = [];
   var crewsId = [];
@@ -23,7 +25,7 @@ export function CrewCard({ crew }) {
       <div className="smcardBody gridTwoRow">
         <img
           className="astroAvatar"
-          src={crew.astronaut.profile_image}
+          src={crew.astronaut.profile_image? crew.astronaut.profile_image : NoImg}
           alt=""
         />
         <div className="astroDetail ">

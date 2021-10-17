@@ -36,7 +36,35 @@ export function ListLaunchD({ title }) {
   } else if (!isLoaded) {
     return (
       <div className="listLaunch">
-        <Loading />
+         {page > 0 ? (
+          <i
+          className="fas fa-angle-left fs60 btnHover"
+            onClick={() => {
+              setPage(page - 1);
+              setIsLoaded(false);
+            }}
+          ></i>
+        ) : (
+          <i
+          className="fas fa-angle-left fs60 btnDisable"
+          ></i>
+        )}
+        <div>
+          <div className="detColor fs45 text-al-center">{title} launch</div>
+          <div className="listGrid">
+            <Loading/>
+            <Loading/>
+            <Loading/>
+
+          </div>
+        </div>
+        <i
+          className="fas fa-angle-right fs60 btnHover"
+          onClick={() => {
+            setPage(page + 1);
+            setIsLoaded(false);
+          }}
+        ></i>
       </div>
     );
   } else {
@@ -107,7 +135,32 @@ export function ListLaunchM({ title }) {
   } else if (!isLoaded) {
     return (
       <div className="listLaunch">
-        <Loading />
+         {page > 0 ? (
+          <i
+          className="fas fa-angle-left fs60 btnHover"
+            onClick={() => {
+              setPage(page - 1);
+              setIsLoaded(false);
+            }}
+          ></i>
+        ) : (
+          <i
+          className="fas fa-angle-left fs60 btnDisable"
+          ></i>
+        )}
+        <div>
+          <div className="detColor fs45 text-al-center">{title} launch</div>
+          <div className="listGrid">
+            <Loading/>
+          </div>
+        </div>
+        <i
+          className="fas fa-angle-right fs60 btnHover"
+          onClick={() => {
+            setPage(page + 1);
+            setIsLoaded(false);
+          }}
+        ></i>
       </div>
     );
   } else {
@@ -128,7 +181,7 @@ export function ListLaunchM({ title }) {
         )}
 
         <div>
-          <div className="detColor fs60 text-al-center">{title} launch</div>
+          <div className="detColor fs45 text-al-center">{title} launch</div>
           <div className="listGrid">
             <Launch launchInfo={uplaunch.data.results[0]} timmer={timer} />
           </div>

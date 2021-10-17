@@ -305,4 +305,11 @@ font-size: 20px;
     .gridThreeRow{
       grid-template-columns: repeat(1, 1fr);
     }
+    .smcard{
+        width: 100%;
+        margin-right:0px;
+        margin-left: 0px;
+        padding: 0px;
+    }
+   
   }
