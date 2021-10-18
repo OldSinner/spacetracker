@@ -1,4 +1,5 @@
-import "./App.css";
+import "./styles/App.css";
+import "./styles/Shorts.css";
 import Layout from "./Components/Layouts/Layout";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import MainPage from "./Pages/MainPage";
