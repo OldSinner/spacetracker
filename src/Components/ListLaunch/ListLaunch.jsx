@@ -75,53 +75,131 @@ export function ListLaunchD({ title }) {
   } else if (!isLoaded) {
     return (
       <div className="listLaunch">
-        <div className="detColor fs45 text-al-center">{title} launch</div>
-        <div className="loading">
-          <Breakpoint large up>
-            <div className="listGrid">
-              <Skeleton
-                animation="wave"
-                variant="rectangular"
-                width={500}
-                height={500}
+        <div className="listTitle">
+          <div className="tf"></div>
+          <div className="detColor fs60 text-al-center listT">
+            {title} launch
+            <Breakpoint medium down>
+              <TextField
+                onChange={handleSearch}
+                defaultValue={search}
                 sx={{
-                  margin: "10px",
+                  "& label.Mui-focused": {
+                    color: "var(--detailColor)",
+                  },
+                  "& label": {
+                    color: "var(--detailColor)",
+                  },
+                  "& .MuiInput-underline:after": {
+                    borderBottomColor: "var(--detailColor)",
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "var(--detailColor)",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "var(--detailColor)",
+                    },
+                  },
+                  input: {
+                    color: "var(--firstColor) !important",
+                    borderColor: "var(--firstColor)",
+                  },
                 }}
-              />
-              <Skeleton
-                animation="wave"
-                variant="rectangular"
-                width={500}
-                height={500}
+                id="outlined-basic"
+                label="Search"
+                color="primary"
+              ></TextField>
+            </Breakpoint>
+          </div>
+          <div className="tf">
+            <Breakpoint large up>
+              <TextField
+                onChange={handleSearch}
+                defaultValue={search}
                 sx={{
-                  margin: "10px",
+                  "& label.Mui-focused": {
+                    color: "var(--detailColor)",
+                  },
+                  "& label": {
+                    color: "var(--detailColor)",
+                  },
+                  "& .MuiInput-underline:after": {
+                    borderBottomColor: "var(--detailColor)",
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "var(--detailColor)",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "var(--detailColor)",
+                    },
+                  },
+                  input: {
+                    color: "var(--firstColor) !important",
+                    borderColor: "var(--firstColor)",
+                  },
                 }}
-              />
-              <Skeleton
-                animation="wave"
-                variant="rectangular"
-                width={500}
-                height={500}
-                sx={{
-                  margin: "10px",
-                }}
-              />
-            </div>
-          </Breakpoint>
-          <Breakpoint medium down>
-            <div className="listGrid">
-              <Skeleton
-                animation="wave"
-                variant="rectangular"
-                width={500}
-                height={500}
-                sx={{
-                  margin: "10px",
-                }}
-              />
-            </div>
-          </Breakpoint>
+                id="outlined-basic"
+                label="Search"
+                color="primary"
+              ></TextField>
+            </Breakpoint>
+          </div>
         </div>
+        <Breakpoint large up>
+          <div className="listGrid">
+            <Skeleton
+              animation="wave"
+              variant="rectangular"
+              width={500}
+              height={500}
+              sx={{
+                margin: "10px",
+              }}
+            />
+            <Skeleton
+              animation="wave"
+              variant="rectangular"
+              width={500}
+              height={500}
+              sx={{
+                margin: "10px",
+              }}
+            />
+            <Skeleton
+              animation="wave"
+              variant="rectangular"
+              width={500}
+              height={500}
+              sx={{
+                margin: "10px",
+              }}
+            />
+          </div>
+        </Breakpoint>
+        <Breakpoint medium down>
+          <div className="listGrid">
+            <Skeleton
+              animation="wave"
+              variant="rectangular"
+              width={300}
+              height={550}
+              sx={{
+                margin: "10px",
+              }}
+            />
+            <Pagination
+              count={0}
+              color="primary"
+              showLastButton
+              onChange={handleChange}
+              size="small"
+              page={page + 1}
+              classes={{ ul: classes.ul }}
+            />
+          </div>
+        </Breakpoint>
       </div>
     );
   } else {
@@ -131,8 +209,8 @@ export function ListLaunchD({ title }) {
           <div className="tf"></div>
           <div className="detColor fs60 text-al-center listT">
             {title} launch
-            <Breakpoint medium down >
-            <TextField
+            <Breakpoint medium down>
+              <TextField
                 onChange={handleSearch}
                 defaultValue={search}
                 sx={{
@@ -223,17 +301,10 @@ export function ListLaunchD({ title }) {
           color="primary"
           showLastButton
           onChange={handleChange}
-          size="large"
+          size={divider === 1 ? "small" : "large"}
           page={page + 1}
           classes={{ ul: classes.ul }}
         />
-        {/* <i
-          className="fas fa-angle-right fs60 btnHover"
-          onClick={() => {
-            setPage(page + 1);
-            setIsLoaded(false);
-          }}
-        ></i> */}
       </div>
     );
   }
