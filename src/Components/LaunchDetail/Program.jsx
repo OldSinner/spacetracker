@@ -4,7 +4,8 @@ import axios from "axios";
 import Loading from "../Loading";
 import { Link } from "react-router-dom";
 import Api from "../../Globals/Api";
-
+//TODO: Fix chaning Agency
+//TODO Back button
 const Agency = ({ id }) => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -38,7 +39,7 @@ const Agency = ({ id }) => {
         </p>
         <h3 className="text-al-center detColor">Type:</h3>
         <p className="fs20 text-al-center margin10">{agency.type}</p>
-        <Link c to={"/"}>
+        <Link c to={"/agency/"+agency.id}>
           <div className="moreButton w100">More</div>
         </Link>
       </div>

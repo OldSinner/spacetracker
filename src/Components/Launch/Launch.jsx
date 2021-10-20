@@ -25,7 +25,7 @@ export default function Launch({ launchInfo, timmer }) {
             </div>
           ) : (
             <div className="statusPrev">
-              <h2 className='margin0'>Status: </h2>
+              <h2 className="margin0">Status: </h2>
               <h1
                 className="statusAct"
                 data-tip={launchInfo.status.description}
@@ -35,13 +35,14 @@ export default function Launch({ launchInfo, timmer }) {
             </div>
           )}
 
-          <Link className='text-al-center'to={"/launch/" + launchInfo.id}>
+          <Link className="text-al-center" to={"/launch/" + launchInfo.id}>
             <Button
+              variant="text"
               sx={{
                 color: "var(--firstColor)",
-                borderColor:"var(--firstColor)",
-                justifySelf:"center",
-                fontSize:20
+                borderColor: "var(--firstColor)",
+                justifySelf: "center",
+                fontSize: 20,
               }}
             >
               More

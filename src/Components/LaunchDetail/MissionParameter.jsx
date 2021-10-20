@@ -2,7 +2,7 @@ import "./style.css";
 import ReactTooltip from "react-tooltip";
 import NoImg from "./../../assets/noimg.jpg"
 
-//TODO REPAR
+//TODO REPAR for mobile
 export default function MissionParameter({ missionInfo }) {
   return (
     <div className="height500 cardwrapper w-img cardbgone">

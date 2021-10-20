@@ -37,8 +37,8 @@ export function ListLaunchD({ title }) {
   };
 
   const handleChange = (event, value) => {
-    setIsLoaded(false);
     setPage(value - 1);
+    setIsLoaded(false);
   };
   var timer = title.toLowerCase() === "upcoming" ? true : false;
 
@@ -282,9 +282,18 @@ export function ListLaunchD({ title }) {
           <>
             <Breakpoint large up>
               <div className="listGrid">
-                <Launch launchInfo={uplaunch.data.results[0]} timmer={timer} />
-                <Launch launchInfo={uplaunch.data.results[1]} timmer={timer} />
-                <Launch launchInfo={uplaunch.data.results[2]} timmer={timer} />
+                <Launch
+                  launchInfo={uplaunch?.data?.results[0]}
+                  timmer={timer}
+                />
+                <Launch
+                  launchInfo={uplaunch?.data?.results[1]}
+                  timmer={timer}
+                />
+                <Launch
+                  launchInfo={uplaunch?.data?.results[2]}
+                  timmer={timer}
+                />
               </div>
             </Breakpoint>
             <Breakpoint medium down>

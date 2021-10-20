@@ -1,0 +1,52 @@
+.pageWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  margin-top: -10px;
+}
+.pageTitle {
+  text-align: center;
+  margin: 30px;
+  font-size: 40px;
+}
+.agencyLogo {
+  object-fit: fill;
+  max-width: 30%;
+  padding: 10px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: var(--detailColor);
+}
+.title {
+  background-color: var(--thirdColor);
+  width: 100%;
+}
+.pageBody {
+  width: 75%;
+  font-size: 25px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.itemPage{
+    margin: 10px;
+    word-break: break-word;
+}
+
+.itemTitle{
+    font-size: 40px;
+    text-align: center;
+    margin: 10px;
+}
+@media only screen and (max-width: 900px) {
+    .itemTitle{
+        font-size: 25px;
+    }
+  .pageBody {
+    font-size: 18px;
+  }
+}

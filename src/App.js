@@ -6,6 +6,7 @@ import MainPage from "./Pages/MainPage";
 import { BreakpointProvider } from "react-socks";
 import LaunchPage from "./Pages/LaunchPage";
 import LaunchList from "./Pages/LaunchList";
+import AgencyPage from "./Pages/AgencyPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               <Route path="/" exact component={MainPage} />
               <Route path="/launch/:id" exact component={LaunchPage} />
               <Route path="/launchlist/"  component={LaunchList} />
+              <Route path='/agency/:id' exact component ={AgencyPage}/>
             </Switch>
           </Layout>
         </Router>
