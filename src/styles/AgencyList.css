@@ -1,0 +1,7 @@
+.agencyContent{
+    display: flex;
+    flex-direction: column;
+}
+.agencyItem{
+    margin: 3px;
+}

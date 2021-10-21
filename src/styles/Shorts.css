@@ -13,3 +13,8 @@
 .margin10{
   margin: 10px;
 }
+.align-cent{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

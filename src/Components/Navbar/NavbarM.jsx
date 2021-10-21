@@ -48,6 +48,16 @@ const NavbarM = () => {
                 <div className="menuItem">Launch List</div>
               </NavLink>
             </li>
+            <li className="subMenuItem fs20">
+              <NavLink
+                to="/agency/"
+                activeStyle={{
+                  color: "var(--detailColor)",
+                }}
+              >
+                <div className="menuItem">Agencies</div>
+              </NavLink>
+            </li>
           </ul>
         </div>
       ) : null}

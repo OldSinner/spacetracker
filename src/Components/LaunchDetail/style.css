@@ -240,7 +240,7 @@ h3{
 .gridFourRow{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
+    gap: 10px;
     justify-content: center;
 }
 
@@ -302,6 +302,10 @@ h3{
         margin-right:0px;
         margin-left: 0px;
         padding: 0px;
+    }
+    .gridFourRow{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
     }
    
   }
