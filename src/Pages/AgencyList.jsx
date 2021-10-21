@@ -50,7 +50,7 @@ export default function AgencyList() {
     return <Loading />;
   } else {
     return (
-      <>
+      <div className='pageWrap'>
         <div className="gridFourRow">
           {agencies.map((agency) => (
             <Card key={agency.id}>
@@ -109,7 +109,7 @@ export default function AgencyList() {
             <CircularProgress />
           )}
         </div>
-      </>
+      </div>
     );
   }
 }
