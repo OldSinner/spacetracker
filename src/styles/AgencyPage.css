@@ -32,21 +32,35 @@
   align-items: center;
   flex-direction: column;
 }
-.itemPage{
-    margin: 10px;
-    word-break: break-word;
+.itemPage {
+  word-break: break-word;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.itemTitle{
-    font-size: 40px;
-    text-align: center;
-    margin: 10px;
+.itemTitle {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
 }
 @media only screen and (max-width: 900px) {
-    .itemTitle{
-        font-size: 25px;
-    }
+  .itemTitle {
+    font-size: 25px;
+  }
   .pageBody {
     font-size: 18px;
+    justify-content: left;
+    align-items: flex-start;
+  }
+  .itemPage {
+    word-break: break-word;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
   }
 }

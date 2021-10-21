@@ -84,10 +84,12 @@ function AgencyPage() {
           ) : null}
 
           {agency?.wiki_url ? (
-            <div className="itemPage">
-              <a href={agency.wiki_url}>
-                <div className="moreButton w80">Check on Wiki</div>
-              </a>
+            <div className="cet">
+              <div className="itemPage">
+                <a href={agency.wiki_url}>
+                  <div className="moreButton w80">Check on Wiki</div>
+                </a>
+              </div>
             </div>
           ) : null}
         </div>

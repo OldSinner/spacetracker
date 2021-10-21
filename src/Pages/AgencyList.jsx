@@ -9,6 +9,7 @@ import { CardActions, CardContent, CardMedia } from "@mui/material";
 import { CircularProgress } from "@material-ui/core";
 import { Button } from "@mui/material";
 import "../styles/AgencyList.css";
+import { Link } from "react-router-dom";
 
 export default function AgencyList() {
   const [error, setError] = useState(null);
@@ -74,24 +75,22 @@ export default function AgencyList() {
                   {agency?.type ? (
                     <div className="agencyItem">Type: {agency.type}</div>
                   ) : null}
-                  {
-                      agency?.founding_year?
-                      (
-                        <div className="agencyItem">Founding Year: {agency.founding_year}</div>
-                      ):null
-                  }
-                   {
-                      agency?.country_code?
-                      (
-                        <div className="agencyItem">Country: {agency.country_code}</div>
-                      ):null
-                  }
+                  {agency?.founding_year ? (
+                    <div className="agencyItem">
+                      Founding Year: {agency.founding_year}
+                    </div>
+                  ) : null}
+                  {agency?.country_code ? (
+                    <div className="agencyItem">
+                      Country: {agency.country_code}
+                    </div>
+                  ) : null}
                 </div>
               </CardContent>
               <CardActions>
-                <Button size="small" href={"/agency/" + agency.id}>
-                  Learn More
-                </Button>
+                <Link to={"/agency/" + agency.id}>
+                  <Button size="small">Learn More</Button>
+                </Link>
               </CardActions>
             </Card>
           ))}

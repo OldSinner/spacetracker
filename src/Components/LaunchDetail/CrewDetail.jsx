@@ -1,5 +1,7 @@
 import React from "react";
 import NoImg from "./../../assets/noimg.jpg"
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function GetAstro(crewArrays) {
   var crews = [];
@@ -65,6 +67,7 @@ export function CrewCard({ crew }) {
             }
             </div>
           </div>
+          <div className='margin5'><Link to={"/crew/"+crew.astronaut.id} ><Button size="large" >More Info</Button></Link></div>
         </div>
       </div>
     </div>

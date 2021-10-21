@@ -8,6 +8,8 @@ import LaunchPage from "./Pages/LaunchPage";
 import LaunchList from "./Pages/LaunchList";
 import AgencyPage from "./Pages/AgencyPage";
 import AgencyList from "./Pages/AgencyList";
+import CrewPage from "./Pages/CrewPage";
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
               <Route path="/launchlist/"  component={LaunchList} />
               <Route path='/agency/:id' exact component ={AgencyPage}/>
               <Route path='/agency' exact component={AgencyList} />
+              <Route path='/crew/:id' exact component={CrewPage} />
             </Switch>
           </Layout>
         </Router>

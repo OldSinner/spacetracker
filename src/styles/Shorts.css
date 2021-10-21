@@ -1,20 +1,42 @@
 .fs20 {
   font-size: 20px;
 }
-.margin10 {
-  margin: 10px;
-}
+
 .text-al-center {
   text-align: center;
 }
-.margin0{
-    margin: 0;
+.margin0 {
+  margin: 0;
 }
-.margin10{
+.margin5 {
+  margin: 5px;
+}
+.margin10 {
   margin: 10px;
 }
-.align-cent{
+.align-cent {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+.cet {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.border {
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--firstColor);
+  padding: 5px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.border:hover {
+  border-color: var(--detailColor);
+}
+.border:hover a {
+  color: var(--detailColor);
 }
