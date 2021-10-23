@@ -45,7 +45,9 @@
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-
+}
+.agenciesPage{
+  margin: 20px
 }
 @media only screen and (max-width: 900px) {
   .itemTitle {

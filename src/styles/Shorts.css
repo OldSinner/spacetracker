@@ -1,7 +1,9 @@
 .fs20 {
   font-size: 20px;
 }
-
+.fs45{
+  font-size: 45px;
+}
 .text-al-center {
   text-align: center;
 }
@@ -38,5 +40,8 @@
   border-color: var(--detailColor);
 }
 .border:hover a {
+  color: var(--detailColor);
+}
+.colorDet{
   color: var(--detailColor);
 }

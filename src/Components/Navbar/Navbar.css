@@ -11,6 +11,7 @@ a:hover{
     width: 100%;
     top: 0px;
     z-index: 10;
+    border-bottom: 1px dashed #FFFFFF;
 }
 .NavbarContainer{
     z-index: 10;

@@ -50,64 +50,67 @@ export default function AgencyList() {
     return <Loading />;
   } else {
     return (
-      <div className='pageWrap'>
-        <div className="gridFourRow">
-          {agencies.map((agency) => (
-            <Card key={agency.id}>
-              {agency?.image_url ? (
-                <CardMedia
-                  component="img"
-                  height="300"
-                  image={agency?.image_url}
-                  alt="green iguana"
-                />
-              ) : (
-                <CardMedia
-                  component="img"
-                  height="300"
-                  image={NoImg}
-                  alt="green iguana"
-                />
-              )}
-              <CardContent>
-                <div className="agencyContent">
-                  <div className="agencyItem">{agency.name}</div>
-                  {agency?.type ? (
-                    <div className="agencyItem">Type: {agency.type}</div>
-                  ) : null}
-                  {agency?.founding_year ? (
-                    <div className="agencyItem">
-                      Founding Year: {agency.founding_year}
-                    </div>
-                  ) : null}
-                  {agency?.country_code ? (
-                    <div className="agencyItem">
-                      Country: {agency.country_code}
-                    </div>
-                  ) : null}
-                </div>
-              </CardContent>
-              <CardActions>
-                <Link to={"/agency/" + agency.id}>
-                  <Button size="small">Learn More</Button>
-                </Link>
-              </CardActions>
-            </Card>
-          ))}
-        </div>
-        <div className="align-cent margin10 ">
-          {isAdded ? (
-            <Button
-              onClick={() => {
-                setIsAdded(false);
-                loadMoreCard();
-              }}
-            >
-              Load More
-            </Button>
-          ) : (
-            <CircularProgress />
-          )}
+      <div className="pageWrap">
+        <div className="agenciesPage">
+          <div className="pageTitle">Agencies</div>
+          <div className="gridFourRow">
+            {agencies.map((agency) => (
+              <Card key={agency.id}>
+                {agency?.image_url ? (
+                  <CardMedia
+                    component="img"
+                    height="300"
+                    image={agency?.image_url}
+                    alt="green iguana"
+                  />
+                ) : (
+                  <CardMedia
+                    component="img"
+                    height="300"
+                    image={NoImg}
+                    alt="green iguana"
+                  />
+                )}
+                <CardContent>
+                  <div className="agencyContent">
+                    <div className="agencyItem">{agency.name}</div>
+                    {agency?.type ? (
+                      <div className="agencyItem">Type: {agency.type}</div>
+                    ) : null}
+                    {agency?.founding_year ? (
+                      <div className="agencyItem">
+                        Founding Year: {agency.founding_year}
+                      </div>
+                    ) : null}
+                    {agency?.country_code ? (
+                      <div className="agencyItem">
+                        Country: {agency.country_code}
+                      </div>
+                    ) : null}
+                  </div>
+                </CardContent>
+                <CardActions>       
+                    <Link to={"/agency/" + agency.id} className="colorDet">
+                      <Button size="small">Learn More</Button>
+                    </Link>
+                </CardActions>
+              </Card>
+            ))}
+          </div>
+          <div className="align-cent margin10 ">
+            {isAdded ? (
+              <Button
+                onClick={() => {
+                  setIsAdded(false);
+                  loadMoreCard();
+                }}
+              >
+                Load More
+              </Button>
+            ) : (
+              <CircularProgress />
+            )}
+          </div>
         </div>
       </div>
     );
