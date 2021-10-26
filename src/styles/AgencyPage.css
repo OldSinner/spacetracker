@@ -13,8 +13,7 @@
 }
 .agencyLogo {
   object-fit: fill;
-  max-width: 30%;
-  padding: 10px;
+  max-width: 40%;
   border-radius: 10px;
   border-style: solid;
   border-color: var(--detailColor);

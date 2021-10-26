@@ -11,6 +11,7 @@ import Spacestations from "./Pages/Spacestations";
 import CrewPage from "./Pages/CrewPage";
 import ScrollToTop from "./Components/ScrollToTop";
 import SpacestationPage from "./Pages/SpacestationPage";
+import CrewList from "./Pages/CrewList";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Route path="/spacestations/" exact component={Spacestations} />
               <Route path="/spacestations/:id" exact component={SpacestationPage} />
               <Route path="/crew/:id" exact component={CrewPage} />
+              <Route path="/crew/" component={CrewList} />
             </Switch>
           </Layout>
         </Router>

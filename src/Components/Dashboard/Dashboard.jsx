@@ -39,6 +39,17 @@ const Dashboard = () => {
           </Link>
         </div>
       </div>
+      <div className="dashCard dashCardSizeM dashCardcrew">
+        <div className="dashCardBody">
+          <div className="dashCardTitle  text-al-center">Astronauts</div>
+          <div className="dashCardSubtitle  text-al-center">
+          People who push the boundaries of human domination.
+          </div>
+          <Link to="/crew/">
+            <i class="far fa-arrow-alt-circle-right fs45"></i>
+          </Link>
+        </div>
+      </div>
     </>
   );
 };

@@ -92,6 +92,18 @@ function SpacestationPage() {
               <div className="text-al-center">{station?.deorbited}</div>
             </div>
           ) : null}
+           {station?.onboard_crew ? (
+            <div className="itemPage">
+              <div className="itemTitle">On Board Crew:</div>
+              <div className="text-al-center">{station?.onboard_crew}</div>
+            </div>
+          ) : null}
+           {station?.orbit ? (
+            <div className="itemPage">
+              <div className="itemTitle">Orbit:</div>
+              <div className="text-al-center">{station?.orbit}</div>
+            </div>
+          ) : null}
           
         </div>
       </div>

@@ -58,6 +58,16 @@ const NavbarM = () => {
                 <div className="menuItem">Spacestations</div>
               </NavLink>
             </li>
+            <li className="subMenuItem fs20">
+              <NavLink
+                to="/crew/"
+                activeStyle={{
+                  color: "var(--detailColor)",
+                }}
+              >
+                <div className="menuItem">Crew</div>
+              </NavLink>
+            </li>
           </ul>
         </div>
       ) : null}

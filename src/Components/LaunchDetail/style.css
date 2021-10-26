@@ -243,6 +243,12 @@ h3{
     gap: 10px;
     justify-content: center;
 }
+.gridSixRow{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    justify-content: center;
+}
 
 .smBodyItem{
     padding: 20px;
@@ -310,6 +316,9 @@ h3{
       grid-template-columns: repeat(1, 1fr);
     }
     .gridThreeRow{
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .gridSixRow{
       grid-template-columns: repeat(1, 1fr);
     }
     .smcard{
