@@ -11,10 +11,11 @@ import { Button } from "@mui/material";
 import "../styles/AgencyList.css";
 import { Link } from "react-router-dom";
 //TODO SEARCH BAR
-export default function CrewList() {
+
+export default function SpacecraftList() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [crew, setCrew] = useState([]);
+  const [craft, setCraft] = useState([]);
   const [isAdded, setIsAdded] = useState(true);
   const [count, setCount] = useState(0);
   const ref = useRef("");
@@ -22,17 +23,17 @@ export default function CrewList() {
   function loadMoreCard() {
     axios.get(ref.current).then((res) => {
       ref.current = res.data.next;
-      const nw = crew.concat(res.data.results);
-      setCrew(nw);
+      const nw = craft.concat(res.data.results);
+      setCraft(nw);
       setIsAdded(true);
     });
   }
   useEffect(() => {
     axios
-      .get(Api + "/astronaut/?format=json&limit=12&ordering=status")
+      .get(Api + "/spacecraft/?format=json&limit=12&ordering=-id")
       .then((res) => {
         setCount(res.data.count);
-        setCrew(res.data.results);
+        setCraft(res.data.results);
         ref.current = res.data.next;
         setIsLoaded(true);
       })
@@ -54,16 +55,15 @@ export default function CrewList() {
     return (
       <div className="pageWrap">
         <div className="agenciesPage">
-          <div className="pageTitle">Crews</div>
+          <div className="pageTitle">Spacecraft</div>
           <div className="gridSixRow">
-            {crew.map((person) => (
-              <Card key={person.id}>
-                {person?.profile_image ? (
+            {craft.map((spacecraft) => (
+              <Card key={spacecraft.id}>
+                {spacecraft?.spacecraft_config?.image_url ? (
                   <CardMedia
                     component="img"
                     height="300"
-                    image={person?.profile_image}
-                    
+                    image={spacecraft?.spacecraft_config?.image_url}
                     alt="green iguana"
                   />
                 ) : (
@@ -76,23 +76,33 @@ export default function CrewList() {
                 )}
                 <CardContent>
                   <div className="agencyContent">
-                    <div className="agencyItem">{person.name}</div>
-                    {person?.status ? (
+                    <div className="agencyItem">{spacecraft.name}</div>
+                    {spacecraft?.status ? (
                       <div className="agencyItem">
-                        Status: {person.status.name}
+                        Status: {spacecraft.status.name}
+                      </div>
+                    ) : null}
+                    {spacecraft?.spacecraft_config?.name ? (
+                      <div className="agencyItem">
+                        Family: {spacecraft.spacecraft_config.name}
+                      </div>
+                    ) : null}
+                     {spacecraft?.spacecraft_config?.agency?.name ? (
+                      <div className="agencyItem">
+                        Agency: {spacecraft.spacecraft_config?.agency?.name}
                       </div>
                     ) : null}
                   </div>
                 </CardContent>
                 <CardActions>
-                  <Link to={"/crew/" + person.id} className="colorDet">
+                  <Link to={"/crew/" + spacecraft.id} className="colorDet">
                     <Button size="small">Learn More</Button>
                   </Link>
                 </CardActions>
               </Card>
             ))}
           </div>
-          {count > crew.length ? (
+          {count > craft.length ? (
             <div className="align-cent margin10 ">
               {isAdded ? (
                 <Button

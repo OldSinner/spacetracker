@@ -50,6 +50,17 @@ const Dashboard = () => {
           </Link>
         </div>
       </div>
+      <div className="dashCard dashCardSizeM dashCardspacecraft">
+        <div className="dashCardBody">
+          <div className="dashCardTitle  text-al-center">Spacecraft</div>
+          <div className="dashCardSubtitle  text-al-center">
+          Vehicle designed to fly in outer space.
+          </div>
+          <Link to="/crew/">
+            <i class="far fa-arrow-alt-circle-right fs45"></i>
+          </Link>
+        </div>
+      </div>
     </>
   );
 };

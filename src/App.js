@@ -12,6 +12,7 @@ import CrewPage from "./Pages/CrewPage";
 import ScrollToTop from "./Components/ScrollToTop";
 import SpacestationPage from "./Pages/SpacestationPage";
 import CrewList from "./Pages/CrewList";
+import SpacecraftList from "./Pages/SpacecraftList";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <Route path="/spacestations/:id" exact component={SpacestationPage} />
               <Route path="/crew/:id" exact component={CrewPage} />
               <Route path="/crew/" component={CrewList} />
+              <Route path="/craft/" exact component={SpacecraftList} />
             </Switch>
           </Layout>
         </Router>

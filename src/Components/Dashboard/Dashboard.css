@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-shadow: 2px 2px 12px #000000, -2px -2px 12px #000000, -2px 2px 12px #000000, 2px -2px 12px #000000;
+  text-shadow: 1px 1px 11px #000000, -1px -1px 11px #000000, -1px 1px 11px #000000, 1px -1px 11px #000000;
 
 }
 .dashCardSizeL{
@@ -20,7 +20,7 @@
   height: 65vh;
 }
 .dashCard {
-  text-shadow: 2px 2px 12px #000000, -2px -2px 12px #000000, -2px 2px 12px #000000, 2px -2px 12px #000000;
+  text-shadow: 1px 1px 11px #000000, -1px -1px 11px #000000, -1px 1px 11px #000000, 1px -1px 11px #000000;
   border-bottom: solid 3px var(--detailColor);
   -webkit-animation: fadein 2s;
   -moz-animation: fadein 2s;
@@ -52,6 +52,12 @@
 }
 .dashCardcrew{
   background-image: url(./../../assets/astro.jpg);
+  background-size: cover;
+  background-position: center;
+  transition: 0.3s;
+}
+.dashCardspacecraft{
+  background-image: url(./../../assets/spcraft.jpg);
   background-size: cover;
   background-position: center;
   transition: 0.3s;
