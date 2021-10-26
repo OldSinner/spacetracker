@@ -99,7 +99,7 @@ export default function Spacestations() {
                   </div>
                 </CardContent>
                 <CardActions>
-                  <Link to={"/agency/" + spacestation.id} className="colorDet">
+                  <Link to={"/spacestations/" + spacestation.id} className="colorDet">
                     <Button size="small">Learn More</Button>
                   </Link>
                 </CardActions>
