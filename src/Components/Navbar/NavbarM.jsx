@@ -50,12 +50,12 @@ const NavbarM = () => {
             </li>
             <li className="subMenuItem fs20">
               <NavLink
-                to="/agency/"
+                to="/spacestations/"
                 activeStyle={{
                   color: "var(--detailColor)",
                 }}
               >
-                <div className="menuItem">Agencies</div>
+                <div className="menuItem">Spacestations</div>
               </NavLink>
             </li>
           </ul>

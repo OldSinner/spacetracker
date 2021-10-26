@@ -11,26 +11,28 @@ import { Button } from "@mui/material";
 import "../styles/AgencyList.css";
 import { Link } from "react-router-dom";
 
-export default function AgencyList() {
+export default function Spacestations() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [agencies, setAgencies] = useState([]);
+  const [stations, setStations] = useState([]);
   const [isAdded, setIsAdded] = useState(true);
+  const [count, setCount] = useState(0);
   const ref = useRef("");
 
   function loadMoreCard() {
     axios.get(ref.current).then((res) => {
       ref.current = res.data.next;
-      const nw = agencies.concat(res.data.results);
-      setAgencies(nw);
+      const nw = stations.concat(res.data.results);
+      setStations(nw);
       setIsAdded(true);
     });
   }
   useEffect(() => {
     axios
-      .get(Api + "/agencies/?format=json&limit=12&ordering=-featured")
+      .get(Api + "/spacestation/?format=json&limit=8&ordering=status")
       .then((res) => {
-        setAgencies(res.data.results);
+        setCount(res.data.count);
+        setStations(res.data.results);
         ref.current = res.data.next;
         setIsLoaded(true);
       })
@@ -52,15 +54,15 @@ export default function AgencyList() {
     return (
       <div className="pageWrap">
         <div className="agenciesPage">
-          <div className="pageTitle">Agencies</div>
+          <div className="pageTitle">Spacestations</div>
           <div className="gridFourRow">
-            {agencies.map((agency) => (
-              <Card key={agency.id}>
-                {agency?.image_url ? (
+            {stations.map((spacestation) => (
+              <Card key={spacestation.id}>
+                {spacestation?.image_url ? (
                   <CardMedia
                     component="img"
                     height="300"
-                    image={agency?.image_url}
+                    image={spacestation?.image_url}
                     alt="green iguana"
                   />
                 ) : (
@@ -73,44 +75,53 @@ export default function AgencyList() {
                 )}
                 <CardContent>
                   <div className="agencyContent">
-                    <div className="agencyItem">{agency.name}</div>
-                    {agency?.type ? (
-                      <div className="agencyItem">Type: {agency.type}</div>
-                    ) : null}
-                    {agency?.founding_year ? (
+                    <div className="agencyItem">{spacestation.name}</div>
+                    {spacestation?.status ? (
                       <div className="agencyItem">
-                        Founding Year: {agency.founding_year}
+                        Status: {spacestation.status.name}
                       </div>
                     ) : null}
-                    {agency?.country_code ? (
+                    {spacestation?.type ? (
                       <div className="agencyItem">
-                        Country: {agency.country_code}
+                        Type: {spacestation.type.name}
+                      </div>
+                    ) : null}
+                    {spacestation?.founded ? (
+                      <div className="agencyItem">
+                        Founded: {spacestation.founded}
+                      </div>
+                    ) : null}
+                    {spacestation?.deorbited ? (
+                      <div className="agencyItem">
+                        Deorbited: {spacestation.deorbited}
                       </div>
                     ) : null}
                   </div>
                 </CardContent>
-                <CardActions>       
-                    <Link to={"/agency/" + agency.id} className="colorDet">
-                      <Button size="small">Learn More</Button>
-                    </Link>
+                <CardActions>
+                  <Link to={"/agency/" + spacestation.id} className="colorDet">
+                    <Button size="small">Learn More</Button>
+                  </Link>
                 </CardActions>
               </Card>
             ))}
           </div>
-          <div className="align-cent margin10 ">
-            {isAdded ? (
-              <Button
-                onClick={() => {
-                  setIsAdded(false);
-                  loadMoreCard();
-                }}
-              >
-                Load More
-              </Button>
-            ) : (
-              <CircularProgress />
-            )}
-          </div>
+          {count > stations.length ? (
+            <div className="align-cent margin10 ">
+              {isAdded ? (
+                <Button
+                  onClick={() => {
+                    setIsAdded(false);
+                    loadMoreCard();
+                  }}
+                >
+                  Load More
+                </Button>
+              ) : (
+                <CircularProgress />
+              )}
+            </div>
+          ) : null}
         </div>
       </div>
     );

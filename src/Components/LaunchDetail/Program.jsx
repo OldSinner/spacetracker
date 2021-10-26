@@ -82,7 +82,7 @@ const Card = ({ Program }) => {
       </div>
       {Program.wiki_url != null ? (
         <a href={Program.wiki_url}>
-          <div className="moreButton">Check on Wiki</div>
+          <div className="moreButton w20">Check on Wiki </div>
         </a>
       ) : null}
     </div>

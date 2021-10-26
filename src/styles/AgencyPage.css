@@ -22,6 +22,8 @@
 .title {
   background-color: var(--thirdColor);
   width: 100%;
+  text-align: center;
+  padding-top: 30px;
 }
 .pageBody {
   width: 75%;

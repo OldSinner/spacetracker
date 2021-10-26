@@ -7,28 +7,27 @@ import { BreakpointProvider } from "react-socks";
 import LaunchPage from "./Pages/LaunchPage";
 import LaunchList from "./Pages/LaunchList";
 import AgencyPage from "./Pages/AgencyPage";
-import AgencyList from "./Pages/AgencyList";
+import Spacestations from "./Pages/Spacestations";
 import CrewPage from "./Pages/CrewPage";
-
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
-    
       <BreakpointProvider>
         <Router>
+          <ScrollToTop />
           <Layout>
             <Switch>
               <Route path="/" exact component={MainPage} />
               <Route path="/launch/:id" exact component={LaunchPage} />
-              <Route path="/launchlist/"  component={LaunchList} />
-              <Route path='/agency/:id' exact component ={AgencyPage}/>
-              <Route path='/agency' exact component={AgencyList} />
-              <Route path='/crew/:id' exact component={CrewPage} />
+              <Route path="/launchlist/" component={LaunchList} />
+              <Route path="/agency/:id" exact component={AgencyPage} />
+              <Route path="/spacestations/" exact component={Spacestations} />
+              <Route path="/crew/:id" exact component={CrewPage} />
             </Switch>
           </Layout>
         </Router>
       </BreakpointProvider>
-    
   );
 }
 

@@ -25,10 +25,10 @@ const NavbarD = () => {
              </NavLink>
           </div>
           <div className="linksNavbar">
-          <NavLink  to='/agency/' activeStyle={{
+          <NavLink  to='/spacestations/' activeStyle={{
               color: 'var(--detailColor)'
             }}>
-             <div className="menuItem">Agencies</div>
+             <div className="menuItem">Spacestations</div>
              </NavLink>
           </div>
         </div>

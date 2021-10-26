@@ -1,6 +1,6 @@
 .wrap {
   flex-basis: 100%;
-  width: auto;
+  width: 500px;
   height: auto;
   border-radius: 20px;
   margin: 20px;
@@ -73,7 +73,6 @@ flex-direction: column;
 .moreButton{
   padding: 4px;
   cursor: pointer;
-  width: 20%;
   text-align: center;
   margin: auto;
   border-style: solid;
@@ -85,4 +84,9 @@ flex-direction: column;
 .moreButton:hover{
   background-color: var(--firstColor);
   color: black;
+}
+@media only screen and (max-width: 990px) {
+  .wrap {
+    width: 80vw;
+  }
 }

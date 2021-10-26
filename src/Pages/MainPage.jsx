@@ -1,10 +1,10 @@
 
 import React from "react";
-import Welcome from "../Components/Dashboard/Welcome";
+import Dashboard from "../Components/Dashboard/Dashboard";
 export default function MainPage() {
     return (
         <div className="page">
-            <Welcome/>
+            <Dashboard/>
         </div>
     )
 }
