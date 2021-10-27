@@ -8,8 +8,14 @@
 }
 .pageTitle {
   text-align: center;
-  margin: 30px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+
   font-size: 40px;
+}
+.searchBar{
+  position: absolute;
+  top: 9.5%;
 }
 .agencyLogo {
   object-fit: fill;
@@ -48,6 +54,7 @@
   margin-bottom: 10px;
 }
 .agenciesPage{
+  width: 97%;
   margin: 20px
 }
 @media only screen and (max-width: 900px) {
@@ -65,5 +72,8 @@
     flex-direction: column;
     justify-content: left;
     align-items: flex-start;
+  }
+  .searchBar{
+    position: relative;
   }
 }

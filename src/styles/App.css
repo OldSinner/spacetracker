@@ -82,3 +82,8 @@ html::-webkit-scrollbar-thumb
 .statusPrev h1 h2 h3{
   margin: 0;
 }
+.agenciesSearchbar{
+  position: absolute;
+  right: 20px;
+    top: 10%;
+}

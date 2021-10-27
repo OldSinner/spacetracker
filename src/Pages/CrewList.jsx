@@ -10,6 +10,8 @@ import { CircularProgress } from "@material-ui/core";
 import { Button } from "@mui/material";
 import "../styles/AgencyList.css";
 import { Link } from "react-router-dom";
+import TextField from "@mui/material/TextField";
+
 //TODO SEARCH BAR
 export default function CrewList() {
   const [error, setError] = useState(null);
@@ -17,8 +19,16 @@ export default function CrewList() {
   const [crew, setCrew] = useState([]);
   const [isAdded, setIsAdded] = useState(true);
   const [count, setCount] = useState(0);
+  const [search, setSearch] = useState("");
   const ref = useRef("");
+  var lastTimeout;
 
+  const handleSearch = (event) => {
+    clearTimeout(lastTimeout);
+    lastTimeout = setTimeout(() => {
+      setSearch(event.target.value);
+    }, 500);
+  };
   function loadMoreCard() {
     axios.get(ref.current).then((res) => {
       ref.current = res.data.next;
@@ -27,9 +37,15 @@ export default function CrewList() {
       setIsAdded(true);
     });
   }
+
   useEffect(() => {
     axios
-      .get(Api + "/astronaut/?format=json&limit=12&ordering=status")
+      .get(
+        Api +
+          "/astronaut/?format=json&limit=12&ordering=status" +
+          "&search=" +
+          search
+      )
       .then((res) => {
         setCount(res.data.count);
         setCrew(res.data.results);
@@ -41,7 +57,7 @@ export default function CrewList() {
         setIsLoaded(true);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [search]);
   if (error) {
     return (
       <div className="bigScreen">
@@ -54,7 +70,41 @@ export default function CrewList() {
     return (
       <div className="pageWrap">
         <div className="agenciesPage">
-          <div className="pageTitle">Crews</div>
+          <div className="pageTitle">
+            <div className="pageTextTitle">Crews</div>{" "}
+            <div className="searchBar">
+              <TextField
+                onChange={handleSearch}
+                defaultValue={search}
+                sx={{
+                  "& label.Mui-focused": {
+                    color: "var(--detailColor)",
+                  },
+                  "& label": {
+                    color: "var(--detailColor)",
+                  },
+                  "& .MuiInput-underline:after": {
+                    borderBottomColor: "var(--detailColor)",
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "var(--detailColor)",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "var(--detailColor)",
+                    },
+                  },
+                  input: {
+                    color: "var(--firstColor) !important",
+                    borderColor: "var(--firstColor)",
+                  },
+                }}
+                id="outlined-basic"
+                label="Search"
+                color="primary"
+              ></TextField>
+            </div>
+          </div>
           <div className="gridSixRow">
             {crew.map((person) => (
               <Card key={person.id}>
@@ -63,7 +113,6 @@ export default function CrewList() {
                     component="img"
                     height="300"
                     image={person?.profile_image}
-                    
                     alt="green iguana"
                   />
                 ) : (
@@ -91,7 +140,13 @@ export default function CrewList() {
                 </CardActions>
               </Card>
             ))}
+            
           </div>
+          {crew.length === 0 ?
+            (
+              <div className='fs45 text-al-center'> No Result Founded :C</div>
+            ):
+            null}
           {count > crew.length ? (
             <div className="align-cent margin10 ">
               {isAdded ? (

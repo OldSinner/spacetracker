@@ -10,7 +10,8 @@ import { CircularProgress } from "@material-ui/core";
 import { Button } from "@mui/material";
 import "../styles/AgencyList.css";
 import { Link } from "react-router-dom";
-//TODO SEARCH BAR
+import TextField from "@mui/material/TextField";
+
 
 export default function SpacecraftList() {
   const [error, setError] = useState(null);
@@ -18,7 +19,16 @@ export default function SpacecraftList() {
   const [craft, setCraft] = useState([]);
   const [isAdded, setIsAdded] = useState(true);
   const [count, setCount] = useState(0);
+  const [search, setSearch] = useState("");
+  var lastTimeout;
   const ref = useRef("");
+
+  const handleSearch = (event) => {
+    clearTimeout(lastTimeout);
+    lastTimeout = setTimeout(() => {
+      setSearch(event.target.value);
+    }, 500);
+  };
 
   function loadMoreCard() {
     axios.get(ref.current).then((res) => {
@@ -30,7 +40,9 @@ export default function SpacecraftList() {
   }
   useEffect(() => {
     axios
-      .get(Api + "/spacecraft/?format=json&limit=12&ordering=-id")
+      .get(Api + "/spacecraft/?format=json&limit=12&ordering=-id"+
+      "&search=" +
+      search)
       .then((res) => {
         setCount(res.data.count);
         setCraft(res.data.results);
@@ -42,7 +54,7 @@ export default function SpacecraftList() {
         setIsLoaded(true);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [search]);
   if (error) {
     return (
       <div className="bigScreen">
@@ -55,7 +67,41 @@ export default function SpacecraftList() {
     return (
       <div className="pageWrap">
         <div className="agenciesPage">
-          <div className="pageTitle">Spacecraft</div>
+          <div className="pageTitle">
+          <div className="pageTextTitle">Spacecraft</div>
+          <div className="searchBar">
+              <TextField
+                onChange={handleSearch}
+                defaultValue={search}
+                sx={{
+                  "& label.Mui-focused": {
+                    color: "var(--detailColor)",
+                  },
+                  "& label": {
+                    color: "var(--detailColor)",
+                  },
+                  "& .MuiInput-underline:after": {
+                    borderBottomColor: "var(--detailColor)",
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "var(--detailColor)",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "var(--detailColor)",
+                    },
+                  },
+                  input: {
+                    color: "var(--firstColor) !important",
+                    borderColor: "var(--firstColor)",
+                  },
+                }}
+                id="outlined-basic"
+                label="Search"
+                color="primary"
+              ></TextField>
+            </div>
+          </div>
           <div className="gridSixRow">
             {craft.map((spacecraft) => (
               <Card key={spacecraft.id}>
@@ -102,6 +148,11 @@ export default function SpacecraftList() {
               </Card>
             ))}
           </div>
+          {craft.length === 0 ?
+            (
+              <div className='fs45 text-al-center'> No Result Founded :C</div>
+            ):
+            null}
           {count > craft.length ? (
             <div className="align-cent margin10 ">
               {isAdded ? (

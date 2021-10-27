@@ -35,9 +35,7 @@
   #react-paginate li {
     display: inline-block;
   }
-.fs60{
-    font-size: 60px;
-}
+
 .btnDisable{
     color: gray;
     cursor:default;

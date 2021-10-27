@@ -56,7 +56,7 @@ const Dashboard = () => {
           <div className="dashCardSubtitle  text-al-center">
           Vehicle designed to fly in outer space.
           </div>
-          <Link to="/crew/">
+          <Link to="/craft/">
             <i class="far fa-arrow-alt-circle-right fs45"></i>
           </Link>
         </div>
