@@ -55,20 +55,9 @@ const Dashboard = () => {
       </section>
       <section className="dashCard dashCardSizeM dashCardspacecraft" data-aos="fade-in"  data-aos-easing="ease-in-out" data-aos-once="true">
         <div className="dashCardBody">
-          <div className="dashCardTitle  text-al-center">Spacecraft</div>
+          <div className="dashCardTitle  text-al-center">Spacecrafts</div>
           <div className="dashCardSubtitle  text-al-center">
           Vehicle designed to fly in outer space.
-          </div>
-          <Link to="/craft/">
-            <i class="far fa-arrow-alt-circle-right fs45"></i>
-          </Link>
-        </div>
-      </section>
-      <section className="dashCard dashCardSizeM dashCardsevents" data-aos="fade-in"  data-aos-easing="ease-in-out" data-aos-once="true">
-        <div className="dashCardBody">
-          <div className="dashCardTitle  text-al-center">Events</div>
-          <div className="dashCardSubtitle  text-al-center">
-          Stay alert to news.
           </div>
           <Link to="/craft/">
             <i class="far fa-arrow-alt-circle-right fs45"></i>

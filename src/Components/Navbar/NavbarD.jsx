@@ -46,6 +46,16 @@ const NavbarD = () => {
               <div className="menuItem">Crew</div>
             </NavLink>
           </div>
+          <div className="linksNavbar">
+            <NavLink
+              to="/about/"
+              activeStyle={{
+                color: "var(--detailColor)",
+              }}
+            >
+              <div className="menuItem">About</div>
+            </NavLink>
+          </div>
         </div>
       </div>
     </div>
