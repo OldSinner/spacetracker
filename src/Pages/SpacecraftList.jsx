@@ -148,7 +148,8 @@ export default function SpacecraftList() {
               </Card>
             ))}
           </div>
-          {craft.length === 0 ?
+          {craft
+          .length === 0 ?
             (
               <div className='fs45 text-al-center'> No Result Founded :C</div>
             ):

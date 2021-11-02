@@ -87,3 +87,16 @@ html::-webkit-scrollbar-thumb
   right: 20px;
     top: 10%;
 }
+footer{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: var(--secondColor);
+  border-top-style: solid;
+  border-width: 2px;
+  border-color: var(--detailColor);
+}

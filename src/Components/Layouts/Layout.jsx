@@ -3,6 +3,7 @@ import "./Layout.css";
 import { Breakpoint } from "react-socks";
 import NavbarM from "../Navbar/NavbarM";
 import NavbarD from "../Navbar/NavbarD";
+import PageFooter from "../PageFooter";
 const Layout = ({ children }) => {
   return (
     <React.Fragment>
@@ -13,6 +14,7 @@ const Layout = ({ children }) => {
           <NavbarD />
         </Breakpoint>
         <div className="mainWrapper">{children}</div>
+        <PageFooter/>
     </React.Fragment>
   );
 };
