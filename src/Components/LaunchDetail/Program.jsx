@@ -13,9 +13,7 @@ const Agency = ({ id }) => {
 
   useEffect(() => {
     axios
-      .get(
-        Api+"/agencies/" + id + "/?format=json"
-      )
+      .get(Api + "/agencies/" + id + "/?format=json")
       .then((res) => {
         setAgency(res.data);
         setIsLoaded(true);
@@ -33,13 +31,13 @@ const Agency = ({ id }) => {
     return (
       <div className="agency">
         <h2 className="text-al-center detColor">Agency:</h2>
-        <img alt='Agency Logo' className="agencyImg" src={agency.logo_url} />
+        <img alt="Agency Logo" className="agencyImg" src={agency.logo_url} />
         <p className="fs20 text-al-center margin10 notop">
           {agency.name} ({agency.abbrev})
         </p>
         <h3 className="text-al-center detColor">Type:</h3>
         <p className="fs20 text-al-center margin10">{agency.type}</p>
-        <Link to={"/agency/"+agency.id}>
+        <Link to={"/agency/" + agency.id}>
           <div className="moreButton w100">More</div>
         </Link>
       </div>
@@ -51,7 +49,11 @@ const Card = ({ Program }) => {
   return (
     <div className="smcard">
       <div className="smcardTitle">
-        <img alt='Program Logo' className="programLogo" src={Program.image_url} />
+        <img
+          alt="Program Logo"
+          className="programLogo"
+          src={Program.image_url}
+        />
         <h1 className="detColor">{Program.name}</h1>
       </div>
       <hr className="hr80" />
@@ -63,7 +65,17 @@ const Card = ({ Program }) => {
         {Program.agencies.length !== 0 ? (
           <div className="smBodyItem">
             <div className="slidder">
-              <i className="fas fa-angle-left fs45 btnHover"></i>
+              <div
+                className="slideButton"
+                onClick={() => {
+                  const index = activeId;
+                  if (index - 1 > 0) setActiveId(index - 1);
+                  else setActiveId(Program.agencies.length-1);
+                }}
+              >
+                <i className="fas fa-angle-left fs45 btnHover"></i>
+              </div>
+
               <Agency id={Program.agencies[activeId].id} />
               <div
                 className="slideButton"
