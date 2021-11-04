@@ -1,5 +1,12 @@
 .mainWrapper{
-    min-height: calc(100vh - 160px);
-    margin-top: 60px;
+    min-height: calc(100vh - 180px);
+    margin-top: 80px;
     width: 100%;
+}
+@media only screen and (max-width: 900px) {
+    .mainWrapper{
+        min-height: calc(100vh - 170px);
+        margin-top: 80px;
+        width: 100%;
+    }
 }

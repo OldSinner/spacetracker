@@ -9,7 +9,6 @@
   justify-content: center;
   align-items: center;
   text-shadow: 1px 1px 11px #000000, -1px -1px 11px #000000, -1px 1px 11px #000000, 1px -1px 11px #000000;
-
 }
 .dashCardSizeL{
   width: 100%;
@@ -71,7 +70,6 @@
 }
 .dashCardSubtitle {
   margin: 10px;
-
   font-size: 35px;
 }
 .dashCardAction {
@@ -81,8 +79,6 @@
   border-width: 2px;
   border-radius: 40px;
 }
-
-
 @media only screen and (max-width: 990px) {
   .dashCardTitle {
     font-size: 40px;
